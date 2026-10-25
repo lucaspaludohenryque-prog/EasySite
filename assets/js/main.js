@@ -2,14 +2,16 @@
  * Easy Sites | Landing page behavior
  * - Header glass state and active section highlight (IntersectionObserver, no scroll listeners)
  * - Mobile menu with focus handling and Escape support
- * - Scroll reveal for step, bento and plan groups
- * - Portfolio carousel controls and testimonial slider
+ * - Scroll reveal with 100ms cascading stagger for step, bento, portfolio, testimonials and plans
+ * - Portfolio carousel controls and interactive detail modal (Lightbox)
  * - Budget simulator that sends the summary through WhatsApp
  */
 
+const WHATSAPP_PHONE = '5500000000000';
+
 const CONFIG = {
   // Número de WhatsApp no formato internacional, só dígitos: 55 + DDD + número.
-  whatsapp: '5500000000000',
+  whatsapp: WHATSAPP_PHONE,
   types: {
     landing: { label: 'Landing page', base: 497, includedPages: 1, pageCost: 0, days: 5 },
     institucional: { label: 'Site institucional', base: 997, includedPages: 5, pageCost: 120, days: 7 },
@@ -25,6 +27,61 @@ const CONFIG = {
   },
   expressRate: 0.3,
   maintenanceMonthly: 59,
+};
+
+const PLAN_MESSAGES = {
+  Essencial: 'Olá! Vim pelo site da Easy Sites e quero contratar o Plano Essencial (R$ 497).',
+  Profissional: 'Olá! Vim pelo site da Easy Sites e quero contratar o Plano Profissional (R$ 997).',
+  Premium: 'Olá! Vim pelo site da Easy Sites e quero contratar o Plano Premium (R$ 1.797).',
+};
+
+const GENERAL_QUESTION_MESSAGE = 'Olá! Vim pelo site da Easy Sites e gostaria de tirar uma dúvida sobre criação de sites.';
+
+const PORTFOLIO_PROJECTS = {
+  jaja: {
+    title: 'Jajá Banho e Tosa',
+    niche: 'Pet shop',
+    img: 'assets/img/portfolio-jaja-banho-tosa.jpg',
+    alt: 'Página inicial do site Jajá Banho e Tosa',
+    delivered: [
+      'Agendamento rápido de banho e tosa integrado direto ao WhatsApp',
+      'Tabela interativa de serviços e pacotes com preços transparentes',
+      'Configuração completa de SEO Local e Perfil da Empresa no Google',
+    ],
+  },
+  padaria: {
+    title: 'Padaria Novo Horizonte',
+    niche: 'Padaria e Confeitaria',
+    img: 'assets/img/portfolio-padaria-novo-horizonte.jpg',
+    alt: 'Página inicial do site Padaria Novo Horizonte',
+    delivered: [
+      'Cardápio digital mobile-first com fotos em alta definição dos produtos',
+      'Botão de encomenda rápida para retirada no balcão sem filas',
+      'Presença destacada no Google Maps com horários e rotas atualizados',
+    ],
+  },
+  doces: {
+    title: 'Doces da Ká',
+    niche: 'Confeitaria Artesanal',
+    img: 'assets/img/portfolio-doces-da-ka.jpg',
+    alt: 'Página inicial do site Doces da Ká',
+    delivered: [
+      'Vitrine visual com catálogo de bolos decorados e doces gourmet',
+      'Botão de encomenda rápida com reserva de datas comemorativas',
+      'Integração direta com o Instagram e atendimento via WhatsApp',
+    ],
+  },
+  clinica: {
+    title: 'Clínica Sorriso Vivo',
+    niche: 'Clínica Odontológica (Projeto Conceito)',
+    img: 'assets/img/portfolio-clinica-sorriso-vivo.jpg',
+    alt: 'Página inicial do projeto conceito Clínica Sorriso Vivo',
+    delivered: [
+      'Apresentação clara dos tratamentos odontológicos e equipe médica',
+      'Botão para triagem e agendamento de avaliação inicial no WhatsApp',
+      'Estratégia de SEO local para atrair pacientes da sua região',
+    ],
+  },
 };
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -110,7 +167,7 @@ function initMobileMenu() {
   });
 }
 
-/* ---------- Scroll reveal ---------- */
+/* ---------- Scroll reveal (Cascade stagger) ---------- */
 function initReveal() {
   const items = document.querySelectorAll('.reveal');
   if (prefersReducedMotion || !('IntersectionObserver' in window)) {
@@ -121,10 +178,11 @@ function initReveal() {
   // Stagger siblings inside the same group.
   const groups = new Map();
   items.forEach((item) => {
-    const siblings = groups.get(item.parentElement) || [];
+    const parent = item.parentElement;
+    const siblings = groups.get(parent) || [];
     item.style.setProperty('--i', siblings.length);
     siblings.push(item);
-    groups.set(item.parentElement, siblings);
+    groups.set(parent, siblings);
   });
 
   const observer = new IntersectionObserver((entries) => {
@@ -133,7 +191,7 @@ function initReveal() {
       entry.target.classList.add('is-visible');
       observer.unobserve(entry.target);
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
   items.forEach((item) => observer.observe(item));
 }
@@ -171,6 +229,87 @@ function initPortfolio() {
   edgeObserver.observe(last);
 }
 
+/* ---------- Portfolio details modal (Lightbox) ---------- */
+function initPortfolioModal() {
+  const modal = document.getElementById('portfolio-modal');
+  if (!modal) return;
+
+  const closeBtn = document.getElementById('modal-close-btn');
+  const ctaBtn = document.getElementById('modal-cta-btn');
+  const imgEl = document.getElementById('modal-project-img');
+  const nicheEl = document.getElementById('modal-project-niche');
+  const titleEl = document.getElementById('modal-project-title');
+  const deliveredEl = document.getElementById('modal-project-delivered');
+
+  let lastFocusedElement = null;
+
+  const open = (projectId) => {
+    const project = PORTFOLIO_PROJECTS[projectId];
+    if (!project) return;
+
+    lastFocusedElement = document.activeElement;
+    imgEl.src = project.img;
+    imgEl.alt = project.alt;
+    nicheEl.textContent = project.niche;
+    titleEl.textContent = project.title;
+
+    deliveredEl.innerHTML = project.delivered
+      .map((item) => `<li><i data-lucide="check"></i><span>${item}</span></li>`)
+      .join('');
+
+    initIcons();
+
+    modal.hidden = false;
+    requestAnimationFrame(() => {
+      modal.classList.add('is-open');
+    });
+    document.body.style.overflow = 'hidden';
+    closeBtn?.focus();
+  };
+
+  const close = () => {
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+    setTimeout(() => {
+      modal.hidden = true;
+      if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+        lastFocusedElement.focus();
+      }
+    }, 320);
+  };
+
+  // Open triggers on buttons and card preview click
+  document.querySelectorAll('[data-open-project]').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      open(btn.dataset.openProject);
+    });
+  });
+
+  document.querySelectorAll('.project[data-project]').forEach((card) => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a')) return;
+      open(card.dataset.project);
+    });
+  });
+
+  closeBtn?.addEventListener('click', close);
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) close();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal.hidden && modal.classList.contains('is-open')) {
+      close();
+    }
+  });
+
+  ctaBtn?.addEventListener('click', () => {
+    close();
+  });
+}
+
 /* ---------- Testimonials ---------- */
 function initQuotes() {
   const quotes = [...document.querySelectorAll('#quotes .quote')];
@@ -196,14 +335,29 @@ function initQuotes() {
 
 /* ---------- WhatsApp links ---------- */
 function initWhatsappLinks() {
-  document.querySelectorAll('[data-whatsapp="contact"]').forEach((link) => {
-    link.href = whatsappUrl('Olá, Easy Sites! Quero saber mais sobre a criação de um site para o meu negócio.');
-  });
-
+  // Plan CTAs
   document.querySelectorAll('[data-plan]').forEach((link) => {
-    link.href = whatsappUrl(`Olá, Easy Sites! Tenho interesse no plano ${link.dataset.plan}. Podemos conversar?`);
+    const plan = link.dataset.plan;
+    const msg = PLAN_MESSAGES[plan] || `Olá! Vim pelo site da Easy Sites e quero contratar o Plano ${plan}.`;
+    link.href = whatsappUrl(msg);
     link.target = '_blank';
     link.rel = 'noopener';
+  });
+
+  // Floating button, footer and general contacts
+  document.querySelectorAll('[data-whatsapp="contact"]').forEach((link) => {
+    link.href = whatsappUrl(GENERAL_QUESTION_MESSAGE);
+    link.target = '_blank';
+    link.rel = 'noopener';
+  });
+
+  ['wa-float', 'footer-whatsapp', 'final-cta-whatsapp'].forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.href = whatsappUrl(GENERAL_QUESTION_MESSAGE);
+      el.target = '_blank';
+      el.rel = 'noopener';
+    }
   });
 }
 
@@ -374,6 +528,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initReveal();
   initPortfolio();
+  initPortfolioModal();
   initQuotes();
   initWhatsappLinks();
   initSimulator();

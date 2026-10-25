@@ -10,14 +10,14 @@
 
 1. Abra o [site oficial do Easy Sites](https://lucaspaludohenryque-prog.github.io/EasySite/).
 2. Conheça as **Soluções & Nichos** atendidos (padarias, clínicas, pet shops, confeitarias e comércio local).
-3. Explore o **Portifólio** com demonstrações reais de projetos entregues.
+3. Explore o **Portfólio** com demonstrações reais de projetos entregues.
 4. Utilize o **Simulador de Orçamento** interativo e envie a proposta diretamente pelo WhatsApp.
 
 ### Acesso rápido
 
 - [Abrir o site oficial no navegador](https://lucaspaludohenryque-prog.github.io/EasySite/)
 - [Ir direto ao Simulador de Orçamento](https://lucaspaludohenryque-prog.github.io/EasySite/#simulador)
-- [Explorar o Portifólio de Projetos](https://lucaspaludohenryque-prog.github.io/EasySite/#portfolio)
+- [Explorar o Portfólio de Projetos](https://lucaspaludohenryque-prog.github.io/EasySite/#portfolio)
 - [Conferir Tabela de Planos e Preços](https://lucaspaludohenryque-prog.github.io/EasySite/#planos)
 - [Abrir o repositório no GitHub](https://github.com/lucaspaludohenryque-prog/EasySite)
 
@@ -31,7 +31,7 @@ O Easy Sites é uma estrutura web completa e moderna para agências de criação
 
 - **Design sob medida:** Visual limpo e contemporâneo com tipografia Plus Jakarta Sans e ícones Lucide.
 - **Simulador de Orçamento:** Ferramenta interativa com cálculo em tempo real que monta a mensagem pronta para o WhatsApp.
-- **Portifólio com carrossel:** Vitrine interativa com casos de uso reais para negócios locais.
+- **Portfólio com carrossel:** Vitrine interativa com casos de uso reais para negócios locais.
 - **Mobile-First:** 100% responsivo para celulares, tablets e desktops.
 - **SEO Local e Google:** Estrutura semântica pronta para indexação no Google e Perfil da Empresa.
 

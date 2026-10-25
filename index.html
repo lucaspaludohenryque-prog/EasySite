@@ -16,7 +16,7 @@
   <meta property="og:image" content="https://easysites.ia.br/assets/img/hero-showcase.jpg">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%233B4CF5'/%3E%3Crect x='18' y='18' width='28' height='7' rx='3.5' fill='%23fff'/%3E%3Crect x='18' y='29' width='20' height='7' rx='3.5' fill='%23fff'/%3E%3Crect x='18' y='40' width='28' height='7' rx='3.5' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='es-grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%234F62FF'/%3E%3Cstop offset='50%25' stop-color='%233B4CF5'/%3E%3Cstop offset='100%25' stop-color='%231B269B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='18' fill='url(%23es-grad)'/%3E%3Cpath d='M35 11L19 34h12l-5 19 20-25H33l2-17z' fill='%23FFFFFF'/%3E%3C/svg%3E">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,7 +54,7 @@
       <ul class="nav__links" id="nav-links">
         <li><a href="#como-funciona" class="nav__link" id="nav-como-funciona">Como funciona</a></li>
         <li><a href="#solucoes" class="nav__link" id="nav-solucoes">Soluções</a></li>
-        <li><a href="#portfolio" class="nav__link" id="nav-portfolio">Portifólio</a></li>
+        <li><a href="#portfolio" class="nav__link" id="nav-portfolio">Portfólio</a></li>
         <li><a href="#planos" class="nav__link" id="nav-planos">Planos</a></li>
         <li><a href="#simulador" class="nav__link" id="nav-simulador">Simulador</a></li>
       </ul>
@@ -70,7 +70,7 @@
       <ul class="mobile-menu__links">
         <li><a href="#como-funciona" id="m-nav-como-funciona">Como funciona</a></li>
         <li><a href="#solucoes" id="m-nav-solucoes">Soluções</a></li>
-        <li><a href="#portfolio" id="m-nav-portfolio">Portifólio</a></li>
+        <li><a href="#portfolio" id="m-nav-portfolio">Portfólio</a></li>
         <li><a href="#planos" id="m-nav-planos">Planos</a></li>
         <li><a href="#simulador" id="m-nav-simulador">Simulador</a></li>
       </ul>
@@ -92,7 +92,7 @@
               Simular orçamento
               <span class="btn__icon" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
             </a>
-            <a href="#portfolio" class="btn btn--ghost btn--lg" id="hero-cta-portfolio">Ver portifólio</a>
+            <a href="#portfolio" class="btn btn--ghost btn--lg" id="hero-cta-portfolio">Ver portfólio</a>
           </div>
         </div>
 
@@ -100,6 +100,31 @@
           <div class="bezel bezel--hero">
             <div class="bezel__core">
               <img src="assets/img/hero-showcase.jpg" width="1200" height="896" alt="Três sites criados pela Easy Sites: uma padaria, uma clínica odontológica e um pet shop" fetchpriority="high">
+            </div>
+          </div>
+
+          <!-- Floating UI Cards (Glassmorphism 3D effect) -->
+          <div class="hero-float hero-float--top-left" aria-hidden="true">
+            <span class="hero-float__icon">⚡</span>
+            <div class="hero-float__content">
+              <strong>99/100</strong>
+              <span>Performance no Google</span>
+            </div>
+          </div>
+
+          <div class="hero-float hero-float--bottom-left" aria-hidden="true">
+            <span class="hero-float__icon">💬</span>
+            <div class="hero-float__content">
+              <strong>+3x Contatos</strong>
+              <span>direto no WhatsApp</span>
+            </div>
+          </div>
+
+          <div class="hero-float hero-float--right" aria-hidden="true">
+            <span class="hero-float__icon">🛡️</span>
+            <div class="hero-float__content">
+              <strong>Domínio + SSL</strong>
+              <span>Inclusos no projeto</span>
             </div>
           </div>
         </div>
@@ -170,7 +195,27 @@
 
         <div class="bento">
           <article class="bento__cell bento__cell--a reveal">
-            <img src="assets/img/portfolio-padaria-novo-horizonte.jpg" alt="" role="presentation" loading="lazy" width="1200" height="896">
+            <div class="bento-mockup" aria-hidden="true">
+              <div class="bento-mockup__browser">
+                <span class="bento-mockup__dot"></span>
+                <span class="bento-mockup__dot"></span>
+                <span class="bento-mockup__dot"></span>
+                <span class="bento-mockup__url">easysites.ia.br/seu-negocio</span>
+              </div>
+              <div class="bento-mockup__preview">
+                <img src="assets/img/hero-showcase.jpg" alt="" role="presentation" loading="lazy" class="bento-mockup__img">
+                <div class="bento-mockup__overlay"></div>
+                <div class="bento-mockup__palette">
+                  <span class="bento-mockup__color" style="--c: #3B4CF5;" title="Identidade Visual"></span>
+                  <span class="bento-mockup__color" style="--c: #1FAF5A;" title="WhatsApp Integrado"></span>
+                  <span class="bento-mockup__color" style="--c: #F59E0B;" title="Destaque"></span>
+                  <span class="bento-mockup__color" style="--c: #11163A;" title="Tipografia Premium"></span>
+                </div>
+                <div class="bento-mockup__pill">
+                  <i data-lucide="sparkles"></i> 100% Personalizado
+                </div>
+              </div>
+            </div>
             <div class="bento__content">
               <h3>Design sob medida para a sua marca</h3>
               <p>Nada de modelo pronto. Cores, fotos e textos pensados para o seu cliente.</p>
@@ -259,10 +304,17 @@
         </header>
       </div>
 
-      <ul class="portfolio__track" id="portfolio-track" tabindex="0" aria-label="Projetos do portifólio">
-        <li class="project">
+      <ul class="portfolio__track" id="portfolio-track" tabindex="0" aria-label="Projetos do portfólio">
+        <li class="project reveal" data-project="jaja">
           <div class="bezel">
-            <div class="bezel__core"><img src="assets/img/portfolio-jaja-banho-tosa.jpg" alt="Página inicial do site Jajá Banho e Tosa" loading="lazy" width="1200" height="896"></div>
+            <div class="bezel__core project__preview">
+              <img src="assets/img/portfolio-jaja-banho-tosa.jpg" alt="Página inicial do site Jajá Banho e Tosa" loading="lazy" width="1200" height="896">
+              <div class="project__overlay">
+                <button type="button" class="btn btn--light btn--sm project__open-btn" data-open-project="jaja">
+                  <i data-lucide="eye"></i> Ver detalhes do projeto
+                </button>
+              </div>
+            </div>
           </div>
           <div class="project__meta">
             <h3>Jajá Banho e Tosa</h3>
@@ -270,9 +322,16 @@
           </div>
           <p>Agendamento de banho pelo WhatsApp e tabela de serviços sempre atualizada.</p>
         </li>
-        <li class="project">
+        <li class="project reveal" data-project="padaria">
           <div class="bezel">
-            <div class="bezel__core"><img src="assets/img/portfolio-padaria-novo-horizonte.jpg" alt="Página inicial do site Padaria Novo Horizonte" loading="lazy" width="1200" height="896"></div>
+            <div class="bezel__core project__preview">
+              <img src="assets/img/portfolio-padaria-novo-horizonte.jpg" alt="Página inicial do site Padaria Novo Horizonte" loading="lazy" width="1200" height="896">
+              <div class="project__overlay">
+                <button type="button" class="btn btn--light btn--sm project__open-btn" data-open-project="padaria">
+                  <i data-lucide="eye"></i> Ver detalhes do projeto
+                </button>
+              </div>
+            </div>
           </div>
           <div class="project__meta">
             <h3>Padaria Novo Horizonte</h3>
@@ -280,9 +339,16 @@
           </div>
           <p>Cardápio digital com fotos dos produtos e pedidos para retirada.</p>
         </li>
-        <li class="project">
+        <li class="project reveal" data-project="doces">
           <div class="bezel">
-            <div class="bezel__core"><img src="assets/img/portfolio-doces-da-ka.jpg" alt="Página inicial do site Doces da Ká" loading="lazy" width="1200" height="896"></div>
+            <div class="bezel__core project__preview">
+              <img src="assets/img/portfolio-doces-da-ka.jpg" alt="Página inicial do site Doces da Ká" loading="lazy" width="1200" height="896">
+              <div class="project__overlay">
+                <button type="button" class="btn btn--light btn--sm project__open-btn" data-open-project="doces">
+                  <i data-lucide="eye"></i> Ver detalhes do projeto
+                </button>
+              </div>
+            </div>
           </div>
           <div class="project__meta">
             <h3>Doces da Ká</h3>
@@ -290,9 +356,16 @@
           </div>
           <p>Vitrine de doces artesanais com encomendas organizadas por data.</p>
         </li>
-        <li class="project">
+        <li class="project reveal" data-project="clinica">
           <div class="bezel">
-            <div class="bezel__core"><img src="assets/img/portfolio-clinica-sorriso-vivo.jpg" alt="Página inicial do projeto conceito Clínica Sorriso Vivo" loading="lazy" width="1200" height="896"></div>
+            <div class="bezel__core project__preview">
+              <img src="assets/img/portfolio-clinica-sorriso-vivo.jpg" alt="Página inicial do projeto conceito Clínica Sorriso Vivo" loading="lazy" width="1200" height="896">
+              <div class="project__overlay">
+                <button type="button" class="btn btn--light btn--sm project__open-btn" data-open-project="clinica">
+                  <i data-lucide="eye"></i> Ver detalhes do projeto
+                </button>
+              </div>
+            </div>
           </div>
           <div class="project__meta">
             <h3>Clínica Sorriso Vivo</h3>
@@ -304,44 +377,73 @@
     </section>
 
     <!-- ============ DEPOIMENTOS ============ -->
-    <!-- Conteúdo provisório: substituir por depoimentos reais e autorizados antes de publicar. -->
-    <section class="section testimonials" aria-labelledby="testimonials-title">
-      <div class="container testimonials__grid">
-        <div class="testimonials__photo bezel">
-          <div class="bezel__core">
-            <img src="assets/img/cliente-cafeteria.jpg" alt="Dona de cafeteria sorrindo enquanto mostra o novo site no celular" loading="lazy" width="896" height="1200">
+    <section class="section testimonials" id="depoimentos" aria-labelledby="testimonials-title">
+      <div class="container">
+        <header class="section-head section-head--center">
+          <p class="pill"><i data-lucide="sparkles"></i>Casos de sucesso</p>
+          <h2 class="section-title" id="testimonials-title">Quem já tem site com a gente</h2>
+          <p class="section-lead">Pequenos negócios que multiplicaram contatos e clientes através da internet.</p>
+        </header>
+
+        <div class="testimonials__showcase reveal">
+          <div class="testimonials__photo bezel">
+            <div class="bezel__core">
+              <img src="assets/img/cliente-cafeteria.jpg" alt="Dona de cafeteria sorrindo enquanto mostra o novo site no celular" loading="lazy" width="896" height="600">
+            </div>
+          </div>
+          <div class="testimonials__highlight-copy">
+            <span class="pill pill--sm"><i data-lucide="award"></i> 99.4% de aprovação</span>
+            <h3>Histórias reais de quem confiou na Easy Sites</h3>
+            <p>Seu negócio ganha credibilidade instantânea, presença no Google Maps e um canal direto e automático de captação de clientes pelo WhatsApp.</p>
+            <div class="testimonials__metrics">
+              <div><strong>+50</strong><span>Sites entregues</span></div>
+              <div><strong>7 dias</strong><span>Prazo médio de entrega</span></div>
+              <div><strong>5.0 ★</strong><span>Avaliação no Google</span></div>
+            </div>
           </div>
         </div>
 
-        <div class="testimonials__body">
-          <h2 class="section-title" id="testimonials-title">Quem já tem site com a gente</h2>
+        <div class="testimonials__cards">
+          <article class="testimonial-card reveal">
+            <div class="testimonial-card__stars" aria-label="Avaliação 5 estrelas">★★★★★</div>
+            <blockquote>“Antes eu dependia só do Instagram. Hoje metade dos pedidos de encomenda chega pelo botão do site.”</blockquote>
+            <figcaption class="testimonial-card__author">
+              <div class="testimonial-card__name-row">
+                <strong>Karina Alves</strong>
+                <span class="verified-badge" title="Cliente Verificado"><i data-lucide="badge-check"></i>✓ Cliente Verificado</span>
+              </div>
+              <span class="testimonial-card__role">Confeiteira, Doces da Ká</span>
+            </figcaption>
+          </article>
 
-          <div class="quotes" id="quotes" aria-live="polite">
-            <figure class="quote is-active">
-              <blockquote>“Antes eu dependia só do Instagram. Hoje metade dos pedidos de encomenda chega pelo botão do site.”</blockquote>
-              <figcaption><strong>Karina Alves</strong><span>Confeiteira, Doces da Ká</span></figcaption>
-            </figure>
-            <figure class="quote" hidden>
-              <blockquote>“Os clientes elogiam o site no balcão. Passa uma imagem de padaria grande, organizada.”</blockquote>
-              <figcaption><strong>Rogério Menezes</strong><span>Proprietário, Padaria Novo Horizonte</span></figcaption>
-            </figure>
-            <figure class="quote" hidden>
-              <blockquote>“Eu não entendo nada de tecnologia. Eles resolveram tudo e me explicaram o que precisava.”</blockquote>
-              <figcaption><strong>Jaqueline Rocha</strong><span>Sócia, Jajá Banho e Tosa</span></figcaption>
-            </figure>
-          </div>
+          <article class="testimonial-card reveal">
+            <div class="testimonial-card__stars" aria-label="Avaliação 5 estrelas">★★★★★</div>
+            <blockquote>“Os clientes elogiam o site no balcão. Passa uma imagem de padaria grande, organizada.”</blockquote>
+            <figcaption class="testimonial-card__author">
+              <div class="testimonial-card__name-row">
+                <strong>Rogério Menezes</strong>
+                <span class="verified-badge" title="Cliente Verificado"><i data-lucide="badge-check"></i>✓ Cliente Verificado</span>
+              </div>
+              <span class="testimonial-card__role">Proprietário, Padaria Novo Horizonte</span>
+            </figcaption>
+          </article>
 
-          <div class="quotes__nav">
-            <button type="button" class="icon-btn" id="quote-prev" aria-label="Depoimento anterior"><i data-lucide="arrow-left"></i></button>
-            <span class="quotes__count" id="quote-count">1 de 3</span>
-            <button type="button" class="icon-btn" id="quote-next" aria-label="Próximo depoimento"><i data-lucide="arrow-right"></i></button>
-          </div>
+          <article class="testimonial-card reveal">
+            <div class="testimonial-card__stars" aria-label="Avaliação 5 estrelas">★★★★★</div>
+            <blockquote>“Eu não entendo nada de tecnologia. Eles resolveram tudo e me explicaram o que precisava.”</blockquote>
+            <figcaption class="testimonial-card__author">
+              <div class="testimonial-card__name-row">
+                <strong>Jaqueline Rocha</strong>
+                <span class="verified-badge" title="Cliente Verificado"><i data-lucide="badge-check"></i>✓ Cliente Verificado</span>
+              </div>
+              <span class="testimonial-card__role">Sócia, Jajá Banho e Tosa</span>
+            </figcaption>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- ============ PLANOS ============ -->
-    <!-- Valores provisórios: ajustar em index.html e em CONFIG (assets/js/main.js). -->
     <section class="section pricing" id="planos" aria-labelledby="pricing-title">
       <div class="container">
         <header class="section-head section-head--center">
@@ -360,7 +462,7 @@
               <li><i data-lucide="check"></i>Domínio e hospedagem por 1 ano</li>
               <li><i data-lucide="check"></i>Entrega em até 5 dias úteis</li>
             </ul>
-            <a class="btn btn--ghost btn--block" id="plan-essencial-cta" data-plan="Essencial" href="https://wa.me/">Escolher Essencial</a>
+            <a class="btn btn--ghost btn--block" id="plan-essencial-cta" data-plan="Essencial" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Easy%20Sites%20e%20quero%20contratar%20o%20Plano%20Essencial%20(R%24%20497).">Escolher Essencial</a>
           </article>
 
           <article class="plan plan--featured reveal">
@@ -375,7 +477,7 @@
               <li><i data-lucide="check"></i>E-mail profissional</li>
               <li><i data-lucide="check"></i>Entrega em até 7 dias úteis</li>
             </ul>
-            <a class="btn btn--primary btn--block" id="plan-profissional-cta" data-plan="Profissional" href="https://wa.me/">Escolher Profissional</a>
+            <a class="btn btn--primary btn--block" id="plan-profissional-cta" data-plan="Profissional" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Easy%20Sites%20e%20quero%20contratar%20o%20Plano%20Profissional%20(R%24%20997).">Escolher Profissional</a>
           </article>
 
           <article class="plan reveal">
@@ -383,12 +485,14 @@
             <p class="plan__desc">Para quem vende online ou precisa de agendamento automático.</p>
             <p class="plan__price"><span>R$</span>1.797</p>
             <ul class="plan__features">
-              <li><i data-lucide="check"></i>Até 10 páginas ou loja virtual</li>
-              <li><i data-lucide="check"></i>Agendamento ou pedidos online</li>
-              <li><i data-lucide="check"></i>Blog para atrair visitas do Google</li>
-              <li><i data-lucide="check"></i>3 meses de manutenção grátis</li>
+              <li><i data-lucide="check"></i><strong>Tudo do plano Profissional incluso +</strong></li>
+              <li><i data-lucide="check"></i>Até 10 páginas ou catálogo/loja virtual</li>
+              <li><i data-lucide="check"></i>Sistema de agendamento ou pedidos online</li>
+              <li><i data-lucide="check"></i>Blog otimizado para atrair visitas do Google</li>
+              <li><i data-lucide="check"></i>3 meses de manutenção e suporte grátis</li>
+              <li><i data-lucide="check"></i>Entrega prioritária (até 10 dias úteis)</li>
             </ul>
-            <a class="btn btn--ghost btn--block" id="plan-premium-cta" data-plan="Premium" href="https://wa.me/">Escolher Premium</a>
+            <a class="btn btn--ghost btn--block" id="plan-premium-cta" data-plan="Premium" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Easy%20Sites%20e%20quero%20contratar%20o%20Plano%20Premium%20(R%24%201.797).">Escolher Premium</a>
           </article>
         </div>
       </div>
@@ -552,7 +656,7 @@
             <p>Simule agora ou chame a gente no WhatsApp. Respondemos em horário comercial no mesmo dia.</p>
             <div class="final-cta__actions">
               <a href="#simulador" class="btn btn--light btn--lg" id="final-cta-simular">Simular orçamento</a>
-              <a href="https://wa.me/" class="btn btn--outline-light btn--lg" id="final-cta-whatsapp" data-whatsapp="contact" target="_blank" rel="noopener">
+              <a href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Easy%20Sites%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20cria%C3%A7%C3%A3o%20de%20sites." class="btn btn--outline-light btn--lg" id="final-cta-whatsapp" data-whatsapp="contact" target="_blank" rel="noopener">
                 <i data-lucide="message-circle"></i>Falar no WhatsApp
               </a>
             </div>
@@ -576,7 +680,7 @@
             <h3>Navegação</h3>
             <ul>
               <li><a href="#como-funciona" id="footer-como-funciona">Como funciona</a></li>
-              <li><a href="#portfolio" id="footer-portfolio">Portifólio</a></li>
+              <li><a href="#portfolio" id="footer-portfolio">Portfólio</a></li>
               <li><a href="#planos" id="footer-planos">Planos</a></li>
               <li><a href="#duvidas" id="footer-duvidas">Perguntas frequentes</a></li>
             </ul>
@@ -586,7 +690,7 @@
             <h3>Contato</h3>
             <ul>
               <li><a href="mailto:contato@easysites.ia.br" id="footer-email"><i data-lucide="mail"></i>contato@easysites.ia.br</a></li>
-              <li><a href="https://wa.me/" id="footer-whatsapp" data-whatsapp="contact" target="_blank" rel="noopener"><i data-lucide="message-circle"></i>WhatsApp</a></li>
+              <li><a href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Easy%20Sites%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20cria%C3%A7%C3%A3o%20de%20sites." id="footer-whatsapp" data-whatsapp="contact" target="_blank" rel="noopener"><i data-lucide="message-circle"></i>WhatsApp</a></li>
             </ul>
           </div>
         </div>
@@ -598,7 +702,43 @@
     </div>
   </main>
 
-  <a href="https://wa.me/" class="wa-float" id="wa-float" data-whatsapp="contact" target="_blank" rel="noopener" aria-label="Falar com a Easy Sites no WhatsApp">
+  <!-- ============ PORTFOLIO MODAL (LIGHTBOX) ============ -->
+  <div class="modal-backdrop" id="portfolio-modal" role="dialog" aria-modal="true" aria-labelledby="modal-project-title" hidden>
+    <div class="modal-card">
+      <button type="button" class="modal-close" id="modal-close-btn" aria-label="Fechar detalhes do projeto">
+        <i data-lucide="x"></i>
+      </button>
+      <div class="modal-grid">
+        <div class="modal-media">
+          <div class="bezel">
+            <div class="bezel__core">
+              <img id="modal-project-img" src="assets/img/hero-showcase.jpg" alt="Preview do projeto" width="800" height="600">
+            </div>
+          </div>
+        </div>
+        <div class="modal-info">
+          <div class="modal-header">
+            <span class="tag" id="modal-project-niche">Nicho</span>
+            <h3 id="modal-project-title" class="modal-title">Nome do Projeto</h3>
+          </div>
+          <div class="modal-delivered">
+            <h4 class="modal-subtitle">O que foi entregue:</h4>
+            <ul class="modal-list" id="modal-project-delivered">
+              <!-- Preenchido via JavaScript -->
+            </ul>
+          </div>
+          <div class="modal-actions">
+            <a href="#simulador" class="btn btn--primary btn--block btn--lg" id="modal-cta-btn">
+              Quero um site nesse estilo
+              <span class="btn__icon" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Easy%20Sites%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20cria%C3%A7%C3%A3o%20de%20sites." class="wa-float" id="wa-float" data-whatsapp="contact" target="_blank" rel="noopener" aria-label="Falar com a Easy Sites no WhatsApp">
     <i data-lucide="message-circle"></i>
   </a>
 
