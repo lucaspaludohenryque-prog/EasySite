@@ -1064,6 +1064,52 @@ fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
   }
 }
 
+.plan__tag {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-top: 0.25rem;
+  letter-spacing: normal;
+}
+
+.pricing__maintenance-note {
+  max-width: 860px;
+  margin: 2.25rem auto 0;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.15rem 1.6rem;
+  border-radius: var(--radius-card);
+  background: linear-gradient(135deg, rgba(59, 76, 245, 0.05), rgba(0, 210, 255, 0.04));
+  border: 1px solid rgba(59, 76, 245, 0.22);
+  box-shadow: 0 4px 18px rgba(59, 76, 245, 0.06);
+}
+.pricing__maintenance-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.pricing__maintenance-text {
+  font-size: 0.96rem;
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0;
+}
+.pricing__maintenance-text strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .pricing__maintenance-note {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.6rem;
+    padding: 1.25rem 1.2rem;
+  }
+}
+
 /* ==========================================================================
    Night block (simulator, FAQ, CTA, footer)
    ========================================================================== */
@@ -1157,6 +1203,17 @@ input[type="range"]:focus-visible { outline: 3px solid var(--night-focus); outli
 .check input:checked + span { background: var(--night-3); box-shadow: 0 0 0 2px var(--night-focus); }
 .check input:checked + span [data-lucide], .check input:checked + span .lucide { color: var(--night-focus); }
 .check input:focus-visible + span { outline: 3px solid var(--night-focus); outline-offset: 3px; }
+.check span em {
+  font-style: normal;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #8E9AFF;
+  margin-left: auto;
+  white-space: nowrap;
+}
+.check input:checked + span em {
+  color: #C9CEFF;
+}
 
 .segmented {
   display: inline-grid; grid-auto-flow: column; gap: 4px;

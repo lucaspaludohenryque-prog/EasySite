@@ -39,11 +39,13 @@ O Easy Sites é uma estrutura web completa e moderna para agências de criação
 
 ## Planos disponíveis
 
-| Plano | Indicado para | Entrega | Inclusos |
-|---|---|---|---|
-| **Essencial** | Landing page direta para divulgação rápida | Até 5 dias úteis | 1 página, WhatsApp, domínio e hospedagem por 1 ano |
-| **Profissional** | Negócios que querem autoridade e presença completa | Até 7 dias úteis | Até 5 páginas, textos sob medida, SEO local, e-mail profissional |
-| **Premium** | Empresas com vendas online ou agendamento | Até 15 dias úteis | Até 10 páginas ou loja, agendamento, blog, 3 meses de manutenção |
+| Plano | Preço | Indicado para | Entrega | Inclusos principais |
+|---|---|---|---|---|
+| **Essencial** | R$ 147 | Landing page moderna e direta para colocar seu negócio na internet rápido | Até 5 dias úteis | 1 página completa, botão WhatsApp, domínio + hospedagem por 1 ano |
+| **Profissional** | R$ 197 | Site completo para empresas que querem passar confiança e aparecer no Google | Até 7 dias úteis | Até 5 páginas/seções, textos profissionais, SEO local + Google Empresa, mapa |
+| **Completo** | R$ 247 | Negócios com cardápio digital, catálogo de produtos ou agendamento | Até 7 dias úteis | Cardápio/catálogo, agendamento WhatsApp, e-mail profissional, 3 meses de manutenção |
+
+> **Manutenção mensal opcional:** R$ 29/mês após os primeiros 30 dias gratuitos.
 
 ---
 

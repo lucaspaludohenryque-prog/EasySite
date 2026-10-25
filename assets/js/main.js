@@ -13,26 +13,31 @@ const CONFIG = {
   // Número de WhatsApp no formato internacional, só dígitos: 55 + DDD + número.
   whatsapp: WHATSAPP_NUMBER,
   types: {
-    landing: { label: 'Landing page', base: 497, includedPages: 1, pageCost: 0, days: 5 },
-    institucional: { label: 'Site institucional', base: 997, includedPages: 5, pageCost: 120, days: 7 },
-    loja: { label: 'Loja virtual', base: 1797, includedPages: 5, pageCost: 150, days: 15 },
+    landing: { label: 'Landing page (1 página)', base: 147, includedPages: 1, pageCost: 0, days: 5 },
+    institucional: { label: 'Site institucional (até 5 seções)', base: 197, includedPages: 5, pageCost: 20, days: 7 },
+    completo: { label: 'Site completo (Catálogo & Pedidos)', base: 247, includedPages: 5, pageCost: 20, days: 7 },
+    loja: { label: 'Site completo (Catálogo & Pedidos)', base: 247, includedPages: 5, pageCost: 20, days: 7 },
   },
   extras: {
-    logo: { label: 'Criação de logotipo', price: 350, days: 2 },
-    textos: { label: 'Textos profissionais', price: 250, days: 1 },
-    agendamento: { label: 'Agendamento online', price: 400, days: 2 },
-    blog: { label: 'Blog', price: 300, days: 1 },
-    seo: { label: 'SEO avançado', price: 300, days: 1 },
-    idiomas: { label: 'Versão em inglês', price: 450, days: 3 },
+    whatsapp: { label: 'Botão WhatsApp com mensagem pronta', price: 0, days: 0 },
+    seo: { label: 'Perfil Google + SEO Local', price: 30, days: 1 },
+    textos: { label: 'Criação de textos profissionais', price: 20, days: 1 },
+    catalogo: { label: 'Cardápio / Catálogo interativo', price: 30, days: 1 },
+    agendamento: { label: 'Formulário / Agendamento no WhatsApp', price: 25, days: 1 },
+    // Legado para compatibilidade
+    logo: { label: 'Criação de logotipo', price: 0, days: 0 },
+    blog: { label: 'Blog', price: 0, days: 0 },
+    idiomas: { label: 'Versão em inglês', price: 0, days: 0 },
   },
   expressRate: 0.3,
-  maintenanceMonthly: 59,
+  maintenanceMonthly: 29,
 };
 
 const PLAN_MESSAGES = {
-  Essencial: 'Olá! Vim pelo site da Easy Sites e quero contratar o Plano Essencial (R$ 497).',
-  Profissional: 'Olá! Vim pelo site da Easy Sites e quero contratar o Plano Profissional (R$ 997).',
-  Premium: 'Olá! Vim pelo site da Easy Sites e quero contratar o Plano Premium (R$ 1.797).',
+  Essencial: 'Olá! Vim pelo site da Easy Sites e quero contratar o Plano Essencial de R$ 147.',
+  Profissional: 'Olá! Vim pelo site da Easy Sites e quero contratar o Plano Profissional de R$ 197.',
+  Completo: 'Olá! Vim pelo site da Easy Sites e quero contratar o Plano Completo de R$ 247.',
+  Premium: 'Olá! Vim pelo site da Easy Sites e quero contratar o Plano Completo de R$ 247.',
 };
 
 const GENERAL_QUESTION_MESSAGE = 'Olá! Vim pelo site da Easy Sites e gostaria de fazer um orçamento para o meu site.';
@@ -451,15 +456,15 @@ function initSimulator() {
     range.style.setProperty('--fill', `${isLanding ? 0 : fill}%`);
     rangeOutput.textContent = state.pages === 1 ? '1 página' : `${state.pages} páginas`;
     rangeHelp.textContent = isLanding
-      ? 'A landing page tem 1 página longa com todas as seções.'
-      : `${state.type.includedPages} páginas inclusas. Cada página extra custa ${brl.format(state.type.pageCost)}.`;
+      ? 'A landing page tem 1 página única focada em conversão.'
+      : `${state.type.includedPages} páginas inclusas no pacote base. Cada página adicional custa + ${brl.format(state.type.pageCost)}.`;
 
     const lines = [line(state.type.label, brl.format(state.type.base))];
     if (state.extraPages > 0) {
       lines.push(line(`${state.extraPages} página${state.extraPages > 1 ? 's' : ''} extra${state.extraPages > 1 ? 's' : ''}`, brl.format(result.pagesCost)));
     }
-    state.extras.forEach((extra) => lines.push(line(extra.label, brl.format(extra.price))));
-    if (state.express) lines.push(line('Entrega expressa', brl.format(result.expressCost)));
+    state.extras.forEach((extra) => lines.push(line(extra.label, extra.price === 0 ? 'Grátis (Incluso)' : brl.format(extra.price))));
+    if (state.express) lines.push(line('Entrega expressa (+30%)', brl.format(result.expressCost)));
     linesEl.replaceChildren(...lines);
 
     animateTotal(result.total);
@@ -497,7 +502,9 @@ function initSimulator() {
     }
 
     const { state, result } = render();
-    const extrasText = state.extras.length ? state.extras.map((extra) => extra.label).join(', ') : 'Nenhum';
+    const extrasText = state.extras.length
+      ? state.extras.map((extra) => `${extra.label} (${extra.price === 0 ? 'Grátis' : brl.format(extra.price)})`).join(', ')
+      : 'Nenhum';
     const message = [
       `Olá, Easy Sites! Meu nome é ${nameInput.value.trim()}, do negócio ${businessInput.value.trim()}.`,
       'Fiz uma simulação no site:',
@@ -505,7 +512,7 @@ function initSimulator() {
       `- Páginas: ${state.pages}`,
       `- Adicionais: ${extrasText}`,
       `- Prazo: ${state.express ? 'Expresso' : 'Normal'} (até ${result.days} dias úteis)`,
-      `- Manutenção mensal: ${state.maintenance ? 'Sim' : 'Não'}`,
+      `- Manutenção mensal: ${state.maintenance ? `Sim (${brl.format(result.monthly)}/mês)` : 'Não'}`,
       `- Total estimado: ${brl.format(result.total)}${state.maintenance ? ` + ${brl.format(result.monthly)}/mês` : ''}`,
       'Podemos conversar?',
     ].join('\n');
