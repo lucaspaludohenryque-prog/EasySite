@@ -13,7 +13,7 @@ const CONFIG = {
   // Número de WhatsApp no formato internacional, só dígitos: 55 + DDD + número.
   whatsapp: WHATSAPP_NUMBER,
   types: {
-    landing: { label: 'Landing page (1 página)', base: 147, includedPages: 1, pageCost: 0, days: 5 },
+    landing: { label: 'Landing page (1 página)', base: 147, includedPages: 1, pageCost: 20, days: 5 },
     institucional: { label: 'Site institucional (até 5 seções)', base: 197, includedPages: 5, pageCost: 20, days: 7 },
     completo: { label: 'Site completo (Catálogo & Pedidos)', base: 247, includedPages: 5, pageCost: 20, days: 7 },
     loja: { label: 'Site completo (Catálogo & Pedidos)', base: 247, includedPages: 5, pageCost: 20, days: 7 },
@@ -262,8 +262,14 @@ function initPortfolioModal() {
       .map((item) => `<li><i data-lucide="check"></i><span>${item}</span></li>`)
       .join('');
 
+    if (ctaBtn) {
+      const customMsg = `Olá! Vim pelo site da Easy Sites e gostei muito do projeto ${project.title} (${project.niche}). Quero um site assim no meu negócio!`;
+      ctaBtn.href = whatsappUrl(customMsg);
+    }
+
     initIcons();
 
+    modal.classList.remove('modal-hidden');
     modal.hidden = false;
     requestAnimationFrame(() => {
       modal.classList.add('is-open');
@@ -277,6 +283,7 @@ function initPortfolioModal() {
     document.body.style.overflow = '';
     setTimeout(() => {
       modal.hidden = true;
+      modal.classList.add('modal-hidden');
       if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
         lastFocusedElement.focus();
       }
@@ -381,36 +388,227 @@ function initSimulator() {
   const nameInput = document.getElementById('sim-name');
   const businessInput = document.getElementById('sim-business');
 
-  let displayedTotal = 0;
+  // Checkboxes
+  const checkWhatsapp = document.getElementById('sim-extra-whatsapp');
+  const checkSeo = document.getElementById('sim-extra-seo');
+  const checkTextos = document.getElementById('sim-extra-textos');
+  const checkCatalogo = document.getElementById('sim-extra-catalogo');
+  const checkAgendamento = document.getElementById('sim-extra-agendamento');
+
+  // Badges
+  const badgeWhatsapp = document.getElementById('sim-badge-whatsapp');
+  const badgeSeo = document.getElementById('sim-badge-seo');
+  const badgeTextos = document.getElementById('sim-badge-textos');
+  const badgeCatalogo = document.getElementById('sim-badge-catalogo');
+  const badgeAgendamento = document.getElementById('sim-badge-agendamento');
+
+  let displayedTotal = 197;
   let frame = null;
+  let currentTypeKey = 'institucional';
+
+  // Preserve user optional choices when inputs are available
+  const userChecked = {
+    seo: false,
+    textos: false,
+    catalogo: false,
+    agendamento: false,
+  };
+
+  const syncTypeRules = (typeKey) => {
+    // 1. WhatsApp is always included and disabled
+    if (checkWhatsapp) {
+      checkWhatsapp.checked = true;
+      checkWhatsapp.disabled = true;
+      if (badgeWhatsapp) {
+        badgeWhatsapp.textContent = '(Grátis / Incluso - R$ 0)';
+        badgeWhatsapp.className = 'badge--included';
+      }
+    }
+
+    // 2. Rules based on type
+    if (typeKey === 'landing') {
+      // Range slider disabled at 1
+      if (range) {
+        range.value = '1';
+        range.disabled = true;
+      }
+
+      // Checkboxes available as paid additions
+      if (checkSeo) {
+        checkSeo.disabled = false;
+        checkSeo.checked = userChecked.seo;
+        if (badgeSeo) {
+          badgeSeo.textContent = '(+R$ 30)';
+          badgeSeo.className = '';
+        }
+      }
+      if (checkTextos) {
+        checkTextos.disabled = false;
+        checkTextos.checked = userChecked.textos;
+        if (badgeTextos) {
+          badgeTextos.textContent = '(+R$ 20)';
+          badgeTextos.className = '';
+        }
+      }
+      if (checkCatalogo) {
+        checkCatalogo.disabled = false;
+        checkCatalogo.checked = userChecked.catalogo;
+        if (badgeCatalogo) {
+          badgeCatalogo.textContent = '(+R$ 30)';
+          badgeCatalogo.className = '';
+        }
+      }
+      if (checkAgendamento) {
+        checkAgendamento.disabled = false;
+        checkAgendamento.checked = userChecked.agendamento;
+        if (badgeAgendamento) {
+          badgeAgendamento.textContent = '(+R$ 25)';
+          badgeAgendamento.className = '';
+        }
+      }
+    } else if (typeKey === 'institucional') {
+      // Range slider enabled, base 5
+      if (range) {
+        range.disabled = false;
+        if (Number(range.value) < 5) range.value = '5';
+      }
+
+      // SEO & Textos: automatically checked, disabled, (Incluso no plano • R$ 0)
+      if (checkSeo) {
+        checkSeo.checked = true;
+        checkSeo.disabled = true;
+        if (badgeSeo) {
+          badgeSeo.textContent = '(Incluso no plano • R$ 0)';
+          badgeSeo.className = 'badge--included';
+        }
+      }
+      if (checkTextos) {
+        checkTextos.checked = true;
+        checkTextos.disabled = true;
+        if (badgeTextos) {
+          badgeTextos.textContent = '(Incluso no plano • R$ 0)';
+          badgeTextos.className = 'badge--included';
+        }
+      }
+
+      // Catálogo & Agendamento: available as paid additions
+      if (checkCatalogo) {
+        checkCatalogo.disabled = false;
+        checkCatalogo.checked = userChecked.catalogo;
+        if (badgeCatalogo) {
+          badgeCatalogo.textContent = '(+R$ 30)';
+          badgeCatalogo.className = '';
+        }
+      }
+      if (checkAgendamento) {
+        checkAgendamento.disabled = false;
+        checkAgendamento.checked = userChecked.agendamento;
+        if (badgeAgendamento) {
+          badgeAgendamento.textContent = '(+R$ 25)';
+          badgeAgendamento.className = '';
+        }
+      }
+    } else if (typeKey === 'completo') {
+      // Range slider enabled, base 5
+      if (range) {
+        range.disabled = false;
+        if (Number(range.value) < 5) range.value = '5';
+      }
+
+      // All 4 checkboxes: automatically checked, disabled, (Incluso no plano • R$ 0)
+      [
+        { el: checkSeo, badge: badgeSeo },
+        { el: checkTextos, badge: badgeTextos },
+        { el: checkCatalogo, badge: badgeCatalogo },
+        { el: checkAgendamento, badge: badgeAgendamento },
+      ].forEach(({ el, badge }) => {
+        if (el) {
+          el.checked = true;
+          el.disabled = true;
+        }
+        if (badge) {
+          badge.textContent = '(Incluso no plano • R$ 0)';
+          badge.className = 'badge--included';
+        }
+      });
+    }
+
+    currentTypeKey = typeKey;
+  };
 
   const read = () => {
-    const typeKey = form.elements.type.value;
-    const type = CONFIG.types[typeKey];
-    const pages = typeKey === 'landing' ? 1 : Number(range.value);
+    const typeKey = form.elements.type ? form.elements.type.value : 'institucional';
+    const type = CONFIG.types[typeKey] || CONFIG.types.institucional;
+    const pages = typeKey === 'landing' ? 1 : Number(range ? range.value : 5);
     const extraPages = Math.max(0, pages - type.includedPages);
-    const extras = [...form.querySelectorAll('input[name="extras"]:checked')]
-      .map((input) => ({ key: input.value, ...CONFIG.extras[input.value] }));
-    const express = form.elements.deadline.value === 'express';
-    const maintenance = document.getElementById('sim-maintenance').checked;
-    return { typeKey, type, pages, extraPages, extras, express, maintenance };
+
+    const items = [
+      {
+        key: 'whatsapp',
+        label: 'Botão WhatsApp com mensagem pronta',
+        price: 0,
+        included: true,
+        text: 'Grátis / Incluso',
+      },
+    ];
+
+    if (typeKey === 'landing') {
+      if (checkSeo?.checked) {
+        items.push({ key: 'seo', label: 'Perfil Google + SEO Local', price: 30, included: false, text: brl.format(30) });
+      }
+      if (checkTextos?.checked) {
+        items.push({ key: 'textos', label: 'Criação de Textos Profissionais', price: 20, included: false, text: brl.format(20) });
+      }
+      if (checkCatalogo?.checked) {
+        items.push({ key: 'catalogo', label: 'Cardápio / Catálogo Interativo', price: 30, included: false, text: brl.format(30) });
+      }
+      if (checkAgendamento?.checked) {
+        items.push({ key: 'agendamento', label: 'Formulário / Agendamento WhatsApp', price: 25, included: false, text: brl.format(25) });
+      }
+    } else if (typeKey === 'institucional') {
+      items.push({ key: 'seo', label: 'Perfil Google + SEO Local', price: 0, included: true, text: 'Incluso no plano (R$ 0)' });
+      items.push({ key: 'textos', label: 'Criação de Textos Profissionais', price: 0, included: true, text: 'Incluso no plano (R$ 0)' });
+      if (checkCatalogo?.checked) {
+        items.push({ key: 'catalogo', label: 'Cardápio / Catálogo Interativo', price: 30, included: false, text: brl.format(30) });
+      }
+      if (checkAgendamento?.checked) {
+        items.push({ key: 'agendamento', label: 'Formulário / Agendamento WhatsApp', price: 25, included: false, text: brl.format(25) });
+      }
+    } else if (typeKey === 'completo') {
+      items.push({ key: 'seo', label: 'Perfil Google + SEO Local', price: 0, included: true, text: 'Incluso no plano (R$ 0)' });
+      items.push({ key: 'textos', label: 'Criação de Textos Profissionais', price: 0, included: true, text: 'Incluso no plano (R$ 0)' });
+      items.push({ key: 'catalogo', label: 'Cardápio / Catálogo Interativo', price: 0, included: true, text: 'Incluso no plano (R$ 0)' });
+      items.push({ key: 'agendamento', label: 'Formulário / Agendamento WhatsApp', price: 0, included: true, text: 'Incluso no plano (R$ 0)' });
+    }
+
+    const express = form.elements.deadline ? form.elements.deadline.value === 'express' : false;
+    const maintenanceInput = document.getElementById('sim-maintenance');
+    const maintenance = maintenanceInput ? maintenanceInput.checked : false;
+
+    return { typeKey, type, pages, extraPages, items, express, maintenance };
   };
 
   const calculate = (state) => {
     const pagesCost = state.extraPages * state.type.pageCost;
-    const extrasCost = state.extras.reduce((sum, extra) => sum + extra.price, 0);
+    const extrasCost = state.items.reduce((sum, item) => sum + item.price, 0);
     const subtotal = state.type.base + pagesCost + extrasCost;
     const expressCost = state.express ? Math.round(subtotal * CONFIG.expressRate) : 0;
+    const total = subtotal + expressCost;
 
-    let days = state.type.days
-      + Math.ceil(state.extraPages / 3)
-      + state.extras.reduce((sum, extra) => sum + extra.days, 0);
-    if (state.express) days = Math.max(3, Math.ceil(days * 0.6));
+    let days = state.type.days;
+    if (state.extraPages > 0) {
+      days += Math.ceil(state.extraPages / 3);
+    }
+    if (state.express) {
+      days = state.typeKey === 'landing' ? 3 : 5;
+    }
 
     return {
       pagesCost,
+      extrasCost,
       expressCost,
-      total: subtotal + expressCost,
+      subtotal,
+      total,
       monthly: state.maintenance ? CONFIG.maintenanceMonthly : 0,
       days,
     };
@@ -420,17 +618,17 @@ function initSimulator() {
     if (frame) cancelAnimationFrame(frame);
     if (prefersReducedMotion) {
       displayedTotal = target;
-      totalEl.textContent = brl.format(target);
+      if (totalEl) totalEl.textContent = brl.format(target);
       return;
     }
     const start = displayedTotal;
     const startTime = performance.now();
-    const duration = 500;
+    const duration = 400;
     const tick = (now) => {
       const progress = Math.min(1, (now - startTime) / duration);
       const eased = 1 - Math.pow(1 - progress, 3);
       displayedTotal = Math.round(start + (target - start) * eased);
-      totalEl.textContent = brl.format(displayedTotal);
+      if (totalEl) totalEl.textContent = brl.format(displayedTotal);
       if (progress < 1) frame = requestAnimationFrame(tick);
     };
     frame = requestAnimationFrame(tick);
@@ -447,41 +645,82 @@ function initSimulator() {
   };
 
   const render = () => {
+    const newTypeKey = form.elements.type ? form.elements.type.value : 'institucional';
+    if (newTypeKey !== currentTypeKey) {
+      syncTypeRules(newTypeKey);
+    }
+
     const state = read();
     const result = calculate(state);
 
     const isLanding = state.typeKey === 'landing';
-    range.disabled = isLanding;
-    const fill = ((Number(range.value) - Number(range.min)) / (Number(range.max) - Number(range.min))) * 100;
-    range.style.setProperty('--fill', `${isLanding ? 0 : fill}%`);
-    rangeOutput.textContent = state.pages === 1 ? '1 página' : `${state.pages} páginas`;
-    rangeHelp.textContent = isLanding
-      ? 'A landing page tem 1 página única focada em conversão.'
-      : `${state.type.includedPages} páginas inclusas no pacote base. Cada página adicional custa + ${brl.format(state.type.pageCost)}.`;
-
-    const lines = [line(state.type.label, brl.format(state.type.base))];
-    if (state.extraPages > 0) {
-      lines.push(line(`${state.extraPages} página${state.extraPages > 1 ? 's' : ''} extra${state.extraPages > 1 ? 's' : ''}`, brl.format(result.pagesCost)));
+    if (range) {
+      range.disabled = isLanding;
+      const fill = ((Number(range.value) - Number(range.min)) / (Number(range.max) - Number(range.min))) * 100;
+      range.style.setProperty('--fill', `${isLanding ? 0 : fill}%`);
     }
-    state.extras.forEach((extra) => lines.push(line(extra.label, extra.price === 0 ? 'Grátis (Incluso)' : brl.format(extra.price))));
-    if (state.express) lines.push(line('Entrega expressa (+30%)', brl.format(result.expressCost)));
-    linesEl.replaceChildren(...lines);
+    if (rangeOutput) {
+      rangeOutput.textContent = state.pages === 1 ? '1 página' : `${state.pages} páginas`;
+    }
+    if (rangeHelp) {
+      rangeHelp.textContent = isLanding
+        ? 'A landing page tem 1 página única focada em conversão.'
+        : `${state.type.includedPages} páginas inclusas no pacote base. Cada página adicional custa + ${brl.format(state.type.pageCost)}.`;
+    }
+
+    if (linesEl) {
+      const lines = [line(state.type.label, brl.format(state.type.base))];
+      if (state.extraPages > 0) {
+        lines.push(line(`${state.extraPages} página${state.extraPages > 1 ? 's' : ''} adicional${state.extraPages > 1 ? 'is' : ''}`, brl.format(result.pagesCost)));
+      }
+      state.items.forEach((item) => {
+        lines.push(line(item.label, item.text));
+      });
+      if (state.express) {
+        lines.push(line('Entrega expressa (+30%)', brl.format(result.expressCost)));
+      }
+      linesEl.replaceChildren(...lines);
+    }
 
     animateTotal(result.total);
-    monthlyEl.hidden = !state.maintenance;
-    monthlyEl.textContent = `+ ${brl.format(result.monthly)}/mês de manutenção`;
-    deliveryEl.textContent = `Entrega em até ${result.days} dias úteis`;
+
+    if (monthlyEl) {
+      if (state.maintenance) {
+        monthlyEl.hidden = false;
+        monthlyEl.innerHTML = '<span class="summary__monthly-tag">+ R$ 29/mês após 30 dias</span>';
+      } else {
+        monthlyEl.hidden = true;
+        monthlyEl.innerHTML = '';
+      }
+    }
+
+    if (deliveryEl) {
+      deliveryEl.textContent = `Entrega em até ${result.days} dias úteis`;
+    }
 
     return { state, result };
   };
 
   const validateField = (input) => {
+    if (!input) return true;
     const error = document.getElementById(input.getAttribute('aria-describedby'));
     const valid = input.value.trim().length >= 2;
     input.setAttribute('aria-invalid', String(!valid));
     if (error) error.hidden = valid;
     return valid;
   };
+
+  // Remember user selections when ticking checkboxes directly
+  [checkSeo, checkTextos, checkCatalogo, checkAgendamento].forEach((chk) => {
+    chk?.addEventListener('change', () => {
+      if (!chk.disabled) {
+        if (chk === checkSeo) userChecked.seo = chk.checked;
+        if (chk === checkTextos) userChecked.textos = chk.checked;
+        if (chk === checkCatalogo) userChecked.catalogo = chk.checked;
+        if (chk === checkAgendamento) userChecked.agendamento = chk.checked;
+      }
+    });
+  });
 
   form.addEventListener('input', (event) => {
     if (event.target === nameInput || event.target === businessInput) {
@@ -490,6 +729,7 @@ function initSimulator() {
     }
     render();
   });
+
   form.addEventListener('change', render);
 
   form.addEventListener('submit', (event) => {
@@ -497,29 +737,38 @@ function initSimulator() {
     const nameOk = validateField(nameInput);
     const businessOk = validateField(businessInput);
     if (!nameOk || !businessOk) {
-      (nameOk ? businessInput : nameInput).focus();
+      (nameOk ? businessInput : nameInput)?.focus();
       return;
     }
 
     const { state, result } = render();
-    const extrasText = state.extras.length
-      ? state.extras.map((extra) => `${extra.label} (${extra.price === 0 ? 'Grátis' : brl.format(extra.price)})`).join(', ')
-      : 'Nenhum';
+    const clientName = nameInput ? nameInput.value.trim() : '';
+    const clientBusiness = businessInput ? businessInput.value.trim() : '';
+
+    const inclusos = state.items.filter((item) => item.included).map((item) => item.label);
+    const opcionais = state.items.filter((item) => !item.included).map((item) => `${item.label} (+${brl.format(item.price)})`);
+
     const message = [
-      `Olá, Easy Sites! Meu nome é ${nameInput.value.trim()}, do negócio ${businessInput.value.trim()}.`,
-      'Fiz uma simulação no site:',
-      `- Tipo: ${state.type.label}`,
-      `- Páginas: ${state.pages}`,
-      `- Adicionais: ${extrasText}`,
-      `- Prazo: ${state.express ? 'Expresso' : 'Normal'} (até ${result.days} dias úteis)`,
-      `- Manutenção mensal: ${state.maintenance ? `Sim (${brl.format(result.monthly)}/mês)` : 'Não'}`,
-      `- Total estimado: ${brl.format(result.total)}${state.maintenance ? ` + ${brl.format(result.monthly)}/mês` : ''}`,
-      'Podemos conversar?',
+      `Olá, Easy Sites! Meu nome é ${clientName}, do negócio ${clientBusiness}.`,
+      `Gostaria de solicitar uma proposta com base na simulação do site:`,
+      ``,
+      `📌 Tipo de site: ${state.type.label} (${brl.format(state.type.base)})`,
+      `📄 Páginas: ${state.pages} página(s)${state.extraPages > 0 ? ` (+${state.extraPages} adicional(is): ${brl.format(result.pagesCost)})` : ' (Inclusas no pacote)'}`,
+      `✨ Inclusos no plano: ${inclusos.join(', ')}`,
+      `➕ Adicionais contratados: ${opcionais.length ? opcionais.join(', ') : 'Nenhum'}`,
+      `⏱️ Prazo de entrega: ${state.express ? 'Expresso (+30%)' : 'Normal'} (até ${result.days} dias úteis)`,
+      `🔄 Manutenção mensal: ${state.maintenance ? 'Sim (+ R$ 29/mês após 30 dias grátis)' : 'Não selecionada'}`,
+      ``,
+      `💰 Total estimado: ${brl.format(result.total)}${state.maintenance ? ' + R$ 29/mês após 30 dias' : ''}`,
+      ``,
+      `Podemos conversar sobre o meu projeto?`,
     ].join('\n');
 
     window.open(whatsappUrl(message), '_blank', 'noopener');
   });
 
+  // Initial setup: Institucional R$ 197
+  syncTypeRules('institucional');
   render();
 }
 
