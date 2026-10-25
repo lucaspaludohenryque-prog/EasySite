@@ -945,6 +945,7 @@ fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
 .project:hover .project__open-btn,
 .project:focus-within .project__open-btn {
   transform: translateY(0);
+}
 .project__card-btn {
   margin-top: 0.85rem;
   width: 100%;

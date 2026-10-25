@@ -269,6 +269,7 @@ function initPortfolioModal() {
 
     initIcons();
 
+    modal.style.display = 'grid';
     modal.classList.remove('modal-hidden');
     modal.hidden = false;
     requestAnimationFrame(() => {
@@ -283,6 +284,7 @@ function initPortfolioModal() {
     document.body.style.overflow = '';
     setTimeout(() => {
       modal.hidden = true;
+      modal.style.display = 'none';
       modal.classList.add('modal-hidden');
       if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
         lastFocusedElement.focus();
