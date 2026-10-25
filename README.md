@@ -1,35 +1,62 @@
-# Easy Site
+# Easy Sites
 
-Professional web application repository for Easy Site.
+<p align="center">
+  <img src="assets/img/logo.jpg" width="180" alt="Easy Sites Logo">
+</p>
 
-## Overview
+> Criação de sites rápidos, modernos e prontos para o Google para negócios locais em todo o Brasil.
 
-Easy Site provides a modular, high-performance web structure designed for rapid deployment, modern visual standards, and streamlined maintenance.
+## Comece aqui
 
-- **Live Site:** [https://lucaspaludohenryque-prog.github.io/EasySite/](https://lucaspaludohenryque-prog.github.io/EasySite/)
-- **Repository:** [https://github.com/lucaspaludohenryque-prog/EasySite](https://github.com/lucaspaludohenryque-prog/EasySite)
+1. Abra o [site oficial do Easy Sites](https://lucaspaludohenryque-prog.github.io/EasySite/).
+2. Conheça as **Soluções & Nichos** atendidos (padarias, clínicas, pet shops, confeitarias e comércio local).
+3. Explore o **Portfólio** com demonstrações reais de projetos entregues.
+4. Utilize o **Simulador de Orçamento** interativo e envie a proposta diretamente pelo WhatsApp.
 
-## Project Structure
+### Acesso rápido
 
-```text
-EasySite/
-├── index.html            # Landing page (single page, pt-BR)
-├── assets/
-│   ├── css/styles.css    # Design tokens and section styles
-│   ├── js/main.js        # Interactions and budget simulator (prices in CONFIG)
-│   └── img/              # Hero, portfolio and testimonial images
-├── .gitignore
-└── README.md
-```
+- [Abrir o site oficial no navegador](https://lucaspaludohenryque-prog.github.io/EasySite/)
+- [Ir direto ao Simulador de Orçamento](https://lucaspaludohenryque-prog.github.io/EasySite/#simulador)
+- [Explorar o Portfólio de Projetos](https://lucaspaludohenryque-prog.github.io/EasySite/#portfolio)
+- [Conferir Tabela de Planos e Preços](https://lucaspaludohenryque-prog.github.io/EasySite/#planos)
+- [Abrir o repositório no GitHub](https://github.com/lucaspaludohenryque-prog/EasySite)
 
-## Getting Started
+---
 
-### Prerequisites
+## O que é o Easy Sites?
 
-- Git 2.30+
-- Python 3 or Node.js to serve static files locally
+O Easy Sites é uma estrutura web completa e moderna para agências de criação de sites, projetada com foco em alta conversão (CRO), design contemporâneo e máxima velocidade. Funciona 100% no navegador, sem frameworks pesados e pronto para publicação imediata.
 
-### Setup
+### Principais recursos
+
+- **Design sob medida:** Visual limpo e contemporâneo com tipografia Plus Jakarta Sans e ícones Lucide.
+- **Simulador de Orçamento:** Ferramenta interativa com cálculo em tempo real que monta a mensagem pronta para o WhatsApp.
+- **Portfólio com carrossel:** Vitrine interativa com casos de uso reais para negócios locais.
+- **Mobile-First:** 100% responsivo para celulares, tablets e desktops.
+- **SEO Local e Google:** Estrutura semântica pronta para indexação no Google e Perfil da Empresa.
+
+---
+
+## Planos disponíveis
+
+| Plano | Indicado para | Entrega | Inclusos |
+|---|---|---|---|
+| **Essencial** | Landing page direta para divulgação rápida | Até 5 dias úteis | 1 página, WhatsApp, domínio e hospedagem por 1 ano |
+| **Profissional** | Negócios que querem autoridade e presença completa | Até 7 dias úteis | Até 5 páginas, textos sob medida, SEO local, e-mail profissional |
+| **Premium** | Empresas com vendas online ou agendamento | Até 15 dias úteis | Até 10 páginas ou loja, agendamento, blog, 3 meses de manutenção |
+
+---
+
+## Como rodar localmente
+
+Você pode abrir o projeto de duas formas simples no seu computador:
+
+### Opção 1: Direto pelo arquivo (Sem comandos)
+
+1. Dê dois cliques no arquivo `index.html` ou em `abrir-site.bat`.
+2. O site abrirá imediatamente no seu navegador padrão.
+
+### Opção 2: Servidor local
 
 ```bash
 git clone https://github.com/lucaspaludohenryque-prog/EasySite.git
@@ -37,12 +64,26 @@ cd EasySite
 python -m http.server 5500
 ```
 
-Open `http://127.0.0.1:5500`.
+Acesse `http://127.0.0.1:5500`.
 
-### Configuration
+---
 
-Edit `CONFIG` at the top of `assets/js/main.js` to set the WhatsApp number and simulator prices. Plan prices shown in the pricing section live in `index.html`.
+## Estrutura do projeto
 
-## License
+```text
+EasySite/
+├── index.html            # Landing page principal
+├── assets/
+│   ├── css/styles.css    # Design tokens e estilização moderna
+│   ├── js/main.js        # Lógica de interatividade e simulador
+│   └── img/              # Logo e imagens de projetos
+├── abrir-site.bat        # Atalho de execução local direta
+├── .gitignore
+└── README.md
+```
 
-This project is licensed under the MIT License.
+---
+
+## Licença
+
+Distribuído sob a Licença MIT. Uso livre para fins comerciais e institucionais.
