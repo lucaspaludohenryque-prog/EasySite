@@ -29,7 +29,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/img/hero-showcase.jpg">
   <link rel="stylesheet" href="assets/css/styles.css">
-  <script src="https://cdn.tailwindcss.com"></script>
 
   <script type="application/ld+json">
   {
@@ -503,531 +502,512 @@
     </section>
 
     <!-- ============ DEPOIMENTOS ============ -->
-    <section class="section testimonials py-20 bg-slate-50/60" id="depoimentos" aria-labelledby="testimonials-title">
-      <div class="container max-w-7xl mx-auto px-4">
-        <header class="section-head section-head--center text-center mb-12">
-          <p class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase bg-indigo-50 text-indigo-600 mb-3 border border-indigo-100">
-            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>Casos de sucesso
-          </p>
-          <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight" id="testimonials-title">Quem já tem site com a gente</h2>
-          <p class="text-slate-600 max-w-2xl mx-auto mt-2 text-base">Pequenos negócios que multiplicaram contatos e clientes através da internet.</p>
+    <section class="section testimonials" id="depoimentos" aria-labelledby="testimonials-title">
+      <div class="container">
+        <header class="section-head section-head--center">
+          <span class="badge-pill">
+            <i data-lucide="sparkles"></i> Casos de sucesso
+          </span>
+          <h2 class="section-title" id="testimonials-title">Quem já tem site com a gente</h2>
+          <p class="section-lead">Pequenos negócios que multiplicaram contatos e clientes através da internet.</p>
         </header>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          
-          <!-- Coluna Esquerda: Título & Métricas (5 cols) -->
-          <div class="lg:col-span-5 flex flex-col gap-6">
-            <div class="bg-white rounded-3xl p-6 md:p-8 border border-slate-200/80 shadow-sm flex flex-col gap-6">
-              <div>
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-indigo-50 text-indigo-600 mb-3 border border-indigo-100">
-                  <i data-lucide="award" class="w-3.5 h-3.5"></i> 99.4% de aprovação
-                </span>
-                <h3 class="text-2xl font-bold text-slate-900 tracking-tight leading-snug">Histórias reais de quem confiou na Easy Sites</h3>
-                <p class="text-slate-600 text-sm mt-3 leading-relaxed">Seu negócio ganha credibilidade instantânea, presença no Google Maps e um canal direto e automático de captação de clientes pelo WhatsApp.</p>
-              </div>
+        <!-- 3 Métricas lado a lado -->
+        <div class="testimonials__metrics-grid">
+          <div class="metric-card reveal">
+            <strong class="metric-card__value">+50</strong>
+            <span class="metric-card__label">Sites entregues</span>
+          </div>
+          <div class="metric-card reveal">
+            <strong class="metric-card__value">7 dias</strong>
+            <span class="metric-card__label">Prazo médio</span>
+          </div>
+          <div class="metric-card reveal">
+            <strong class="metric-card__value">5.0 ★</strong>
+            <span class="metric-card__label">Avaliação no Google</span>
+          </div>
+        </div>
 
-              <!-- 3 Métricas em Cards compactos -->
-              <div class="grid grid-cols-1 gap-3 pt-4 border-t border-slate-100">
-                <div class="bg-slate-50/90 border border-slate-100 rounded-2xl p-4 flex items-center justify-between">
-                  <div>
-                    <strong class="text-3xl font-black text-indigo-600 tracking-tight block">+50</strong>
-                    <span class="text-slate-500 text-xs font-semibold uppercase tracking-wider">Sites entregues</span>
-                  </div>
-                  <span class="text-2xl" aria-hidden="true">🚀</span>
-                </div>
-
-                <div class="bg-slate-50/90 border border-slate-100 rounded-2xl p-4 flex items-center justify-between">
-                  <div>
-                    <strong class="text-3xl font-black text-indigo-600 tracking-tight block">7 dias</strong>
-                    <span class="text-slate-500 text-xs font-semibold uppercase tracking-wider">Prazo médio de entrega</span>
-                  </div>
-                  <span class="text-2xl" aria-hidden="true">⏱️</span>
-                </div>
-
-                <div class="bg-slate-50/90 border border-slate-100 rounded-2xl p-4 flex items-center justify-between">
-                  <div>
-                    <strong class="text-3xl font-black text-amber-500 tracking-tight block">5.0 ★</strong>
-                    <span class="text-slate-500 text-xs font-semibold uppercase tracking-wider">Avaliação no Google</span>
-                  </div>
-                  <span class="text-2xl" aria-hidden="true">⭐</span>
-                </div>
-              </div>
+        <!-- 3 Depoimentos em Grid -->
+        <div class="testimonials__cards-grid">
+          <!-- Karina Alves -->
+          <article class="testimonial-card reveal">
+            <div class="testimonial-card__stars" aria-label="Avaliação 5 estrelas">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
             </div>
-          </div>
+            <blockquote class="testimonial-card__quote">
+              “Antes eu dependia só do Instagram. Hoje metade dos pedidos de encomenda chega pelo botão do site.”
+            </blockquote>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__author-info">
+                <strong class="testimonial-card__name">Karina Alves</strong>
+                <span class="testimonial-card__role">Confeiteira, Doces da Ká</span>
+              </div>
+              <span class="verified-badge">
+                <i data-lucide="check"></i> Cliente Verificado
+              </span>
+            </div>
+          </article>
 
-          <!-- Coluna Direita: 3 Depoimentos Empilhados (7 cols) -->
-          <div class="lg:col-span-7 space-y-4">
-            <!-- Card 1 -->
-            <article class="bg-white shadow-sm rounded-2xl border border-slate-100 p-6 transition-all hover:shadow-md hover:border-slate-200 reveal">
-              <div class="flex items-center gap-1 text-amber-500 text-sm mb-3" aria-label="Avaliação 5 estrelas">
-                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          <!-- Rogério Menezes -->
+          <article class="testimonial-card reveal">
+            <div class="testimonial-card__stars" aria-label="Avaliação 5 estrelas">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <blockquote class="testimonial-card__quote">
+              “Os clientes elogiam o site no balcão. Passa uma imagem de padaria grande, organizada.”
+            </blockquote>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__author-info">
+                <strong class="testimonial-card__name">Rogério Menezes</strong>
+                <span class="testimonial-card__role">Proprietário, Padaria Novo Horizonte</span>
               </div>
-              <blockquote class="text-slate-600 italic text-base leading-relaxed mb-4">
-                “Antes eu dependia só do Instagram. Hoje metade dos pedidos de encomenda chega pelo botão do site.”
-              </blockquote>
-              <div class="flex items-center justify-between pt-3 border-t border-slate-100 flex-wrap gap-2">
-                <div>
-                  <strong class="text-slate-900 font-bold text-sm block">Karina Alves</strong>
-                  <span class="text-slate-400 text-xs">Confeiteira, Doces da Ká</span>
-                </div>
-                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100">
-                  <i data-lucide="check" class="w-3 h-3"></i>✓ Cliente Verificado
-                </span>
-              </div>
-            </article>
+              <span class="verified-badge">
+                <i data-lucide="check"></i> Cliente Verificado
+              </span>
+            </div>
+          </article>
 
-            <!-- Card 2 -->
-            <article class="bg-white shadow-sm rounded-2xl border border-slate-100 p-6 transition-all hover:shadow-md hover:border-slate-200 reveal">
-              <div class="flex items-center gap-1 text-amber-500 text-sm mb-3" aria-label="Avaliação 5 estrelas">
-                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          <!-- Jaqueline Rocha -->
+          <article class="testimonial-card reveal">
+            <div class="testimonial-card__stars" aria-label="Avaliação 5 estrelas">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <blockquote class="testimonial-card__quote">
+              “Eu não entendo nada de tecnologia. Eles resolveram tudo e me explicaram o que precisava.”
+            </blockquote>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__author-info">
+                <strong class="testimonial-card__name">Jaqueline Rocha</strong>
+                <span class="testimonial-card__role">Sócia, Jajá Banho e Tosa</span>
               </div>
-              <blockquote class="text-slate-600 italic text-base leading-relaxed mb-4">
-                “Os clientes elogiam o site no balcão. Passa uma imagem de padaria grande, organizada.”
-              </blockquote>
-              <div class="flex items-center justify-between pt-3 border-t border-slate-100 flex-wrap gap-2">
-                <div>
-                  <strong class="text-slate-900 font-bold text-sm block">Rogério Menezes</strong>
-                  <span class="text-slate-400 text-xs">Proprietário, Padaria Novo Horizonte</span>
-                </div>
-                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100">
-                  <i data-lucide="check" class="w-3 h-3"></i>✓ Cliente Verificado
-                </span>
-              </div>
-            </article>
-
-            <!-- Card 3 -->
-            <article class="bg-white shadow-sm rounded-2xl border border-slate-100 p-6 transition-all hover:shadow-md hover:border-slate-200 reveal">
-              <div class="flex items-center gap-1 text-amber-500 text-sm mb-3" aria-label="Avaliação 5 estrelas">
-                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-              </div>
-              <blockquote class="text-slate-600 italic text-base leading-relaxed mb-4">
-                “Eu não entendo nada de tecnologia. Eles resolveram tudo e me explicaram o que precisava.”
-              </blockquote>
-              <div class="flex items-center justify-between pt-3 border-t border-slate-100 flex-wrap gap-2">
-                <div>
-                  <strong class="text-slate-900 font-bold text-sm block">Jaqueline Rocha</strong>
-                  <span class="text-slate-400 text-xs">Sócia, Jajá Banho e Tosa</span>
-                </div>
-                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100">
-                  <i data-lucide="check" class="w-3 h-3"></i>✓ Cliente Verificado
-                </span>
-              </div>
-            </article>
-          </div>
-
+              <span class="verified-badge">
+                <i data-lucide="check"></i> Cliente Verificado
+              </span>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- ============ PLANOS ============ -->
-    <section class="section pricing py-20" id="planos" aria-labelledby="pricing-title">
-      <div class="container max-w-7xl mx-auto px-4">
-        <header class="section-head section-head--center text-center mb-16">
-          <p class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase bg-indigo-50 text-indigo-600 mb-4 border border-indigo-100">
-            50% de entrada somente na aprovação do layout + 50% na entrega via Pix, ou parcelado em até 12x no cartão
-          </p>
-          <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight" id="pricing-title">Preço fechado, sem surpresa no final</h2>
-          <p class="pricing__anchoring flex items-center justify-center gap-2 mt-4 text-slate-600 text-sm md:text-base flex-wrap">
-            <span class="inline-block px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600 font-bold text-xs uppercase tracking-wider border border-slate-200">Comparativo</span>
-            <span>Agências tradicionais cobram <strong class="text-slate-900 font-bold">mais de R$ 1.200</strong> pelo mesmo escopo. Na Easy Sites você garante:</span>
+    <section class="section pricing" id="planos" aria-labelledby="pricing-title">
+      <div class="container">
+        <header class="section-head section-head--center">
+          <span class="badge-pill">
+            Pagamento único via Pix (50% de entrada + 50% na entrega) ou no cartão
+          </span>
+          <h2 class="section-title" id="pricing-title">Preço fechado, sem surpresa no final</h2>
+          <p class="pricing__anchoring">
+            <span class="pricing__anchoring-badge">Comparativo</span>
+            <span>Agências tradicionais cobram <strong>mais de R$ 1.200</strong> pelo mesmo escopo. Na Easy Sites você garante:</span>
           </p>
         </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-          
+        <div class="pricing__grid">
           <!-- Plano 1: Essencial -->
-          <article class="bg-white rounded-3xl p-8 shadow-md border border-slate-200 flex flex-col justify-between transition-all hover:shadow-xl hover:-translate-y-1 reveal">
+          <article class="plan-card reveal">
             <div>
-              <h3 class="text-2xl font-bold text-slate-900">Essencial</h3>
-              <p class="text-slate-500 text-sm mt-2 min-h-[40px]">Uma página moderna e direta para colocar seu negócio na internet rápido.</p>
+              <h3 class="plan-card__name">Essencial</h3>
+              <p class="plan-card__desc">Uma página moderna e direta para colocar seu negócio na internet rápido.</p>
               
-              <div class="my-6">
-                <span class="text-slate-400 font-semibold text-lg align-baseline mr-1">R$</span>
-                <span class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">147</span>
-                <span class="text-slate-400 text-xs ml-1 font-medium">pagamento único</span>
+              <div class="plan-card__price">
+                <span class="currency">R$</span>
+                <span class="amount">147</span>
+                <span class="period">pagamento único</span>
               </div>
 
-              <a class="btn btn--block w-full py-3.5 px-6 rounded-xl font-bold text-sm text-center border-2 border-slate-200 hover:border-slate-800 text-slate-800 transition-all block mb-6" id="plan-essencial-cta" data-plan="Essencial" href="https://wa.me/5541997225030?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Easy%20Sites%20e%20quero%20contratar%20o%20Plano%20Essencial%20de%20R$%20147.">
+              <a class="plan-card__cta plan-card__cta--outlined" id="plan-essencial-cta" data-plan="Essencial" href="https://wa.me/5541997225030?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Easy%20Sites%20e%20quero%20contratar%20o%20Plano%20Essencial%20de%20R$%20147.">
                 Escolher Essencial
               </a>
 
-              <ul class="space-y-3 pt-6 border-t border-slate-100 text-sm text-slate-600">
-                <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0"></i><span>Landing page completa (1 página)</span></li>
-                <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0"></i><span>Botão de orçamento direto no WhatsApp</span></li>
-                <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0"></i><span>100% responsivo (celular e computador)</span></li>
-                <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0"></i><span>Domínio .com.br e hospedagem inclusos por 1 ano</span></li>
-                <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0"></i><span>Entrega rápida em até 5 dias úteis</span></li>
+              <ul class="plan-card__features">
+                <li><i data-lucide="check"></i><span>Landing page completa (1 página)</span></li>
+                <li><i data-lucide="check"></i><span>Botão de orçamento direto no WhatsApp</span></li>
+                <li><i data-lucide="check"></i><span>Feito para celular e computador</span></li>
+                <li><i data-lucide="check"></i><span>Domínio .com.br e hospedagem inclusos por 1 ano</span></li>
+                <li><i data-lucide="check"></i><span>Entrega rápida em até 5 dias úteis</span></li>
               </ul>
             </div>
           </article>
 
           <!-- Plano 2: Profissional (Destaque) -->
-          <article class="bg-white rounded-3xl p-8 shadow-xl border-2 border-indigo-600 relative flex flex-col justify-between md:-translate-y-2 transition-all hover:shadow-2xl reveal">
-            <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-indigo-600 text-white shadow-md shadow-indigo-600/30 whitespace-nowrap">
-              ★ MAIS ESCOLHIDO
-            </span>
+          <article class="plan-card plan-card--featured reveal">
+            <span class="plan-card__badge">★ Mais escolhido</span>
 
             <div>
-              <h3 class="text-2xl font-bold text-slate-900">Profissional</h3>
-              <p class="text-slate-500 text-sm mt-2 min-h-[40px]">Site completo para empresas que querem passar confiança e aparecer no Google.</p>
+              <h3 class="plan-card__name">Profissional</h3>
+              <p class="plan-card__desc">Site completo para empresas que querem passar confiança e aparecer no Google.</p>
               
-              <div class="my-6">
-                <span class="text-slate-400 font-semibold text-lg align-baseline mr-1">R$</span>
-                <span class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">197</span>
-                <span class="text-slate-400 text-xs ml-1 font-medium">pagamento único</span>
+              <div class="plan-card__price">
+                <span class="currency">R$</span>
+                <span class="amount">197</span>
+                <span class="period">pagamento único</span>
               </div>
 
-              <a class="btn btn--block w-full py-3.5 px-6 rounded-xl font-bold text-sm text-center bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-600/25 transition-all block mb-6" id="plan-profissional-cta" data-plan="Profissional" href="https://wa.me/5541997225030?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Easy%20Sites%20e%20quero%20contratar%20o%20Plano%20Profissional%20de%20R$%20197.">
+              <a class="plan-card__cta plan-card__cta--primary" id="plan-profissional-cta" data-plan="Profissional" href="https://wa.me/5541997225030?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Easy%20Sites%20e%20quero%20contratar%20o%20Plano%20Profissional%20de%20R$%20197.">
                 Escolher Profissional
               </a>
 
-              <ul class="space-y-3 pt-6 border-t border-slate-100 text-sm text-slate-600">
-                <li class="flex items-start gap-2.5 font-semibold text-indigo-900"><i data-lucide="check" class="w-4 h-4 text-indigo-600 mt-0.5 shrink-0"></i><span>Tudo do plano Essencial +</span></li>
-                <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-indigo-600 mt-0.5 shrink-0"></i><span>Até 5 páginas ou seções completas</span></li>
-                <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-indigo-600 mt-0.5 shrink-0"></i><span>Textos profissionais (Copywriting) escritos pela Easy Sites</span></li>
-                <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-indigo-600 mt-0.5 shrink-0"></i><span>SEO local + Perfil da Empresa no Google</span></li>
-                <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-indigo-600 mt-0.5 shrink-0"></i><span>Galeria de fotos, avaliações e mapa</span></li>
-                <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-indigo-600 mt-0.5 shrink-0"></i><span>Entrega em até 7 dias úteis</span></li>
+              <ul class="plan-card__features">
+                <li class="highlight"><i data-lucide="check"></i><span>Tudo do plano Essencial +</span></li>
+                <li><i data-lucide="check"></i><span>Até 5 páginas ou seções completas</span></li>
+                <li><i data-lucide="check"></i><span>Textos profissionais (Copywriting) escritos pela Easy Sites</span></li>
+                <li><i data-lucide="check"></i><span>SEO local + Perfil da Empresa no Google</span></li>
+                <li><i data-lucide="check"></i><span>Galeria de fotos, avaliações e mapa</span></li>
+                <li><i data-lucide="check"></i><span>Entrega em até 7 dias úteis</span></li>
               </ul>
             </div>
           </article>
 
           <!-- Plano 3: Completo -->
-          <article class="bg-white rounded-3xl p-8 shadow-md border border-slate-200 flex flex-col justify-between transition-all hover:shadow-xl hover:-translate-y-1 reveal">
+          <article class="plan-card reveal">
             <div>
-              <h3 class="text-2xl font-bold text-slate-900">Completo <span class="text-xs font-bold text-indigo-600 block sm:inline">(Catálogo &amp; Pedidos)</span></h3>
-              <p class="text-slate-500 text-sm mt-2 min-h-[40px]">Para quem precisa de cardápio digital, catálogo de produtos ou agendamento no WhatsApp.</p>
+              <h3 class="plan-card__name">Completo <small>(Catálogo &amp; Pedidos)</small></h3>
+              <p class="plan-card__desc">Para quem precisa de cardápio digital, catálogo de produtos ou agendamento no WhatsApp.</p>
               
-              <div class="my-6">
-                <span class="text-slate-400 font-semibold text-lg align-baseline mr-1">R$</span>
-                <span class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">247</span>
-                <span class="text-slate-400 text-xs ml-1 font-medium">pagamento único</span>
+              <div class="plan-card__price">
+                <span class="currency">R$</span>
+                <span class="amount">247</span>
+                <span class="period">pagamento único</span>
               </div>
 
-              <a class="btn btn--block w-full py-3.5 px-6 rounded-xl font-bold text-sm text-center border-2 border-slate-200 hover:border-slate-800 text-slate-800 transition-all block mb-6" id="plan-completo-cta" data-plan="Completo" href="https://wa.me/5541997225030?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Easy%20Sites%20e%20quero%20contratar%20o%20Plano%20Completo%20de%20R$%20247.">
+              <a class="plan-card__cta plan-card__cta--outlined" id="plan-completo-cta" data-plan="Completo" href="https://wa.me/5541997225030?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Easy%20Sites%20e%20quero%20contratar%20o%20Plano%20Completo%20de%20R$%20247.">
                 Escolher Completo
               </a>
 
-              <ul class="space-y-3 pt-6 border-t border-slate-100 text-sm text-slate-600">
-                <li class="flex items-start gap-2.5 font-semibold text-indigo-900"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0"></i><span>Tudo do plano Profissional +</span></li>
-                <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0"></i><span>Cardápio digital ou catálogo interativo de produtos</span></li>
-                <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0"></i><span>Pedidos ou pré-agendamento direto no WhatsApp</span></li>
-                <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0"></i><span>E-mail profissional configurado</span></li>
-                <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0"></i><span>3 meses de manutenção grátis</span></li>
-                <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0"></i><span>Entrega em até 7 dias úteis</span></li>
+              <ul class="plan-card__features">
+                <li class="highlight"><i data-lucide="check"></i><span>Tudo do plano Profissional +</span></li>
+                <li><i data-lucide="check"></i><span>Cardápio digital ou catálogo interativo de produtos</span></li>
+                <li><i data-lucide="check"></i><span>Pedidos ou pré-agendamento direto no WhatsApp</span></li>
+                <li><i data-lucide="check"></i><span>E-mail profissional configurado</span></li>
+                <li><i data-lucide="check"></i><span>3 meses de manutenção grátis</span></li>
+                <li><i data-lucide="check"></i><span>Entrega em até 7 dias úteis</span></li>
               </ul>
             </div>
           </article>
         </div>
 
-        <div class="pricing__maintenance-note max-w-3xl mx-auto mt-12 bg-slate-50 border border-slate-200 rounded-2xl p-4 md:p-6 flex items-center gap-4 text-slate-700 reveal">
-          <div class="text-3xl shrink-0" aria-hidden="true">💡</div>
-          <p class="text-sm md:text-base leading-relaxed m-0">
-            <strong class="text-slate-900 font-bold">Precisa trocar preços, fotos ou promoções todo mês?</strong>
-            Plano de Manutenção Mensal opcional por apenas <strong class="text-indigo-600 font-bold">R$ 29/mês</strong> (após os primeiros 30 dias gratuitos).
+        <div class="pricing__maintenance-note reveal">
+          <div class="pricing__maintenance-icon" aria-hidden="true">💡</div>
+          <p class="pricing__maintenance-text">
+            <strong>Precisa trocar preços, fotos ou promoções todo mês?</strong>
+            Plano de Manutenção Mensal opcional por apenas <strong>R$ 29/mês</strong> (após os primeiros 30 dias gratuitos).
           </p>
         </div>
       </div>
     </section>
 
-    <!-- ============ BLOCO ESCURO: SIMULADOR + FAQ + CTA ============ -->
-    <div class="night bg-slate-950 text-slate-100 py-16">
-      <section class="section simulator" id="simulador" aria-labelledby="sim-title">
-        <div class="container max-w-7xl mx-auto px-4">
-          <header class="section-head mb-12">
-            <p class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 mb-3">
-              <i data-lucide="calculator" class="w-3.5 h-3.5"></i>Resposta na hora
-            </p>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight" id="sim-title">Simule o orçamento do seu site</h2>
-            <p class="text-slate-400 text-base mt-2 max-w-2xl">Escolha o que você precisa e veja o valor estimado em tempo real. Depois é só enviar pelo WhatsApp.</p>
-          </header>
+    <!-- ============ SIMULADOR ============ -->
+    <section class="section simulator" id="simulador" aria-labelledby="sim-title">
+      <div class="container">
+        <header class="section-head section-head--center">
+          <span class="badge-pill">
+            <i data-lucide="calculator"></i> Resposta na hora
+          </span>
+          <h2 class="section-title" id="sim-title">Simule o orçamento do seu site</h2>
+          <p class="section-lead">Escolha o que você precisa e veja o valor estimado em tempo real. Depois é só enviar pelo WhatsApp.</p>
+        </header>
 
-          <form class="sim grid grid-cols-1 lg:grid-cols-12 gap-8 items-start" id="sim-form" novalidate>
-            <!-- Configurador (7 cols) -->
-            <div class="sim__fields lg:col-span-7 space-y-8 bg-slate-900/60 border border-slate-800 rounded-3xl p-6 md:p-8">
-              
-              <!-- Tipo de site -->
-              <fieldset class="field-group border-0 p-0 m-0">
-                <legend class="text-sm font-bold text-slate-200 uppercase tracking-wider mb-3">1. Escolha o Tipo de Site</legend>
-                <div class="option-grid grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  <label class="option cursor-pointer block relative">
-                    <input type="radio" name="type" value="landing" id="sim-type-landing" class="peer sr-only">
-                    <span class="option__body block p-4 rounded-2xl bg-slate-800/80 border border-slate-700/80 transition-all peer-checked:bg-indigo-600/20 peer-checked:border-indigo-500 peer-checked:ring-2 peer-checked:ring-indigo-500/50 hover:border-slate-500 h-full">
-                      <i data-lucide="file" class="w-5 h-5 text-indigo-400 mb-2"></i>
-                      <strong class="text-white block text-sm font-bold">Landing page</strong>
-                      <small class="text-slate-400 text-xs block mt-1">1 página direta • <strong class="text-indigo-300">R$ 147</strong></small>
-                    </span>
-                  </label>
-                  <label class="option cursor-pointer block relative">
-                    <input type="radio" name="type" value="institucional" id="sim-type-institucional" checked class="peer sr-only">
-                    <span class="option__body block p-4 rounded-2xl bg-slate-800/80 border border-slate-700/80 transition-all peer-checked:bg-indigo-600/20 peer-checked:border-indigo-500 peer-checked:ring-2 peer-checked:ring-indigo-500/50 hover:border-slate-500 h-full">
-                      <i data-lucide="layout-template" class="w-5 h-5 text-indigo-400 mb-2"></i>
-                      <strong class="text-white block text-sm font-bold">Institucional</strong>
-                      <small class="text-slate-400 text-xs block mt-1">Até 5 seções • <strong class="text-indigo-300">R$ 197</strong></small>
-                    </span>
-                  </label>
-                  <label class="option cursor-pointer block relative">
-                    <input type="radio" name="type" value="completo" id="sim-type-completo" class="peer sr-only">
-                    <span class="option__body block p-4 rounded-2xl bg-slate-800/80 border border-slate-700/80 transition-all peer-checked:bg-indigo-600/20 peer-checked:border-indigo-500 peer-checked:ring-2 peer-checked:ring-indigo-500/50 hover:border-slate-500 h-full">
-                      <i data-lucide="shopping-bag" class="w-5 h-5 text-indigo-400 mb-2"></i>
-                      <strong class="text-white block text-sm font-bold">Completo</strong>
-                      <small class="text-slate-400 text-xs block mt-1">Catálogo/Pedidos • <strong class="text-indigo-300">R$ 247</strong></small>
-                    </span>
-                  </label>
-                </div>
-              </fieldset>
-
-              <!-- Quantidade de Páginas -->
-              <div class="field-group border-0 p-0 m-0">
-                <div class="range-head flex items-center justify-between mb-2">
-                  <label for="sim-pages" class="text-sm font-bold text-slate-200 uppercase tracking-wider">2. Quantidade de páginas</label>
-                  <output id="sim-pages-output" for="sim-pages" class="text-sm font-extrabold text-indigo-400 bg-indigo-500/10 border border-indigo-500/20 px-3 py-0.5 rounded-full">5 páginas</output>
-                </div>
-                <input type="range" id="sim-pages" name="pages" min="1" max="20" value="5" aria-describedby="sim-pages-help" class="w-full accent-indigo-500 cursor-pointer h-2 bg-slate-700 rounded-lg">
-                <p class="field-help text-xs text-slate-400 mt-2" id="sim-pages-help">5 páginas inclusas no pacote base. Cada página adicional soma + R$ 20.</p>
-              </div>
-
-              <!-- Recursos adicionais (Grid 2 colunas de cards) -->
-              <fieldset class="field-group border-0 p-0 m-0">
-                <legend class="text-sm font-bold text-slate-200 uppercase tracking-wider mb-3">3. Recursos Opcionais e Extras</legend>
-                <div class="check-grid grid grid-cols-1 md:grid-cols-2 gap-3">
-                  <label class="check block cursor-pointer" id="sim-wrap-whatsapp">
-                    <input type="checkbox" name="extras" value="whatsapp" id="sim-extra-whatsapp" checked disabled class="sr-only peer">
-                    <span class="flex items-center gap-2.5 p-3.5 rounded-xl border border-slate-700/80 bg-slate-800/60 peer-checked:border-indigo-500/60 peer-checked:bg-slate-800/90 hover:bg-slate-800 transition-all">
-                      <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i>
-                      <span class="text-xs font-semibold text-slate-200">WhatsApp integrado</span>
-                      <em id="sim-badge-whatsapp" class="badge--included ml-auto text-[11px] font-bold text-emerald-400 not-italic">(Incluso • R$ 0)</em>
-                    </span>
-                  </label>
-
-                  <label class="check block cursor-pointer" id="sim-wrap-seo">
-                    <input type="checkbox" name="extras" value="seo" id="sim-extra-seo" checked disabled class="sr-only peer">
-                    <span class="flex items-center gap-2.5 p-3.5 rounded-xl border border-slate-700/80 bg-slate-800/60 peer-checked:border-indigo-500/60 peer-checked:bg-slate-800/90 hover:bg-slate-800 transition-all">
-                      <i data-lucide="map-pin" class="w-4 h-4 text-indigo-400 shrink-0"></i>
-                      <span class="text-xs font-semibold text-slate-200">Perfil Google + SEO</span>
-                      <em id="sim-badge-seo" class="badge--included ml-auto text-[11px] font-bold text-emerald-400 not-italic">(Incluso no plano • R$ 0)</em>
-                    </span>
-                  </label>
-
-                  <label class="check block cursor-pointer" id="sim-wrap-textos">
-                    <input type="checkbox" name="extras" value="textos" id="sim-extra-textos" checked disabled class="sr-only peer">
-                    <span class="flex items-center gap-2.5 p-3.5 rounded-xl border border-slate-700/80 bg-slate-800/60 peer-checked:border-indigo-500/60 peer-checked:bg-slate-800/90 hover:bg-slate-800 transition-all">
-                      <i data-lucide="type" class="w-4 h-4 text-indigo-400 shrink-0"></i>
-                      <span class="text-xs font-semibold text-slate-200">Criação de Textos</span>
-                      <em id="sim-badge-textos" class="badge--included ml-auto text-[11px] font-bold text-emerald-400 not-italic">(Incluso no plano • R$ 0)</em>
-                    </span>
-                  </label>
-
-                  <label class="check block cursor-pointer" id="sim-wrap-catalogo">
-                    <input type="checkbox" name="extras" value="catalogo" id="sim-extra-catalogo" class="sr-only peer">
-                    <span class="flex items-center gap-2.5 p-3.5 rounded-xl border border-slate-700/80 bg-slate-800/60 peer-checked:border-indigo-500 peer-checked:bg-indigo-600/20 hover:bg-slate-800 transition-all">
-                      <i data-lucide="book-open" class="w-4 h-4 text-indigo-400 shrink-0"></i>
-                      <span class="text-xs font-semibold text-slate-200">Cardápio / Catálogo</span>
-                      <em id="sim-badge-catalogo" class="ml-auto text-[11px] font-bold text-indigo-300 not-italic">(+R$ 30)</em>
-                    </span>
-                  </label>
-
-                  <label class="check block cursor-pointer md:col-span-2" id="sim-wrap-agendamento">
-                    <input type="checkbox" name="extras" value="agendamento" id="sim-extra-agendamento" class="sr-only peer">
-                    <span class="flex items-center gap-2.5 p-3.5 rounded-xl border border-slate-700/80 bg-slate-800/60 peer-checked:border-indigo-500 peer-checked:bg-indigo-600/20 hover:bg-slate-800 transition-all">
-                      <i data-lucide="calendar-clock" class="w-4 h-4 text-indigo-400 shrink-0"></i>
-                      <span class="text-xs font-semibold text-slate-200">Formulário / Agendamento no WhatsApp</span>
-                      <em id="sim-badge-agendamento" class="ml-auto text-[11px] font-bold text-indigo-300 not-italic">(+R$ 25)</em>
-                    </span>
-                  </label>
-                </div>
-              </fieldset>
-
-              <!-- Prazo de entrega -->
-              <fieldset class="field-group border-0 p-0 m-0">
-                <legend class="text-sm font-bold text-slate-200 uppercase tracking-wider mb-2">4. Prazo de entrega</legend>
-                <div class="segmented inline-flex p-1 bg-slate-800 border border-slate-700 rounded-full gap-1">
-                  <label class="cursor-pointer">
-                    <input type="radio" name="deadline" value="normal" id="sim-deadline-normal" checked class="sr-only peer">
-                    <span class="px-5 py-2 rounded-full text-xs font-bold text-slate-400 block transition-all peer-checked:bg-indigo-600 peer-checked:text-white">Normal (Padrão)</span>
-                  </label>
-                  <label class="cursor-pointer">
-                    <input type="radio" name="deadline" value="express" id="sim-deadline-express" class="sr-only peer">
-                    <span class="px-5 py-2 rounded-full text-xs font-bold text-slate-400 block transition-all peer-checked:bg-indigo-600 peer-checked:text-white">Expresso (+30%)</span>
-                  </label>
-                </div>
-              </fieldset>
-
-              <!-- Manutenção Mensal Opcional -->
-              <div class="field-group border-0 p-0 m-0">
-                <label class="switch flex items-center justify-between p-4 rounded-2xl bg-slate-800/60 border border-slate-700/80 cursor-pointer hover:border-slate-600 transition-all" for="sim-maintenance">
-                  <span class="switch__label pr-4">
-                    <strong class="text-white text-sm block font-bold">Manutenção e atualizações mensais (Opcional)</strong>
-                    <small class="text-slate-400 text-xs block mt-0.5">Troca de preços, fotos e promoções por apenas <span class="text-indigo-400 font-bold">+ R$ 29/mês</span> (1º mês grátis)</small>
+        <form class="sim" id="sim-form" novalidate>
+          <!-- Coluna da Esquerda: Controles (Card Branco) -->
+          <div class="sim__fields">
+            <!-- 1. Tipo de site -->
+            <fieldset class="field-group">
+              <legend>1. Escolha o Tipo de Site</legend>
+              <div class="sim-type-grid">
+                <label class="sim-type-btn">
+                  <input type="radio" name="type" value="landing" id="sim-type-landing">
+                  <span class="option__body">
+                    <i data-lucide="file"></i>
+                    <strong>Landing page</strong>
+                    <small>1 página direta • <span class="type-price">R$ 147</span></small>
                   </span>
-                  <input type="checkbox" id="sim-maintenance" name="maintenance" role="switch" class="sr-only peer">
-                  <span class="switch__track w-12 h-7 bg-slate-700 peer-checked:bg-indigo-600 rounded-full relative inline-block transition-all shrink-0 after:content-[''] after:absolute after:top-1 after:left-1 after:w-5 after:h-5 after:bg-white after:rounded-full after:transition-all peer-checked:after:translate-x-5" aria-hidden="true"></span>
+                </label>
+                <label class="sim-type-btn">
+                  <input type="radio" name="type" value="institucional" id="sim-type-institucional" checked>
+                  <span class="option__body">
+                    <i data-lucide="layout-template"></i>
+                    <strong>Institucional</strong>
+                    <small>Até 5 seções • <span class="type-price">R$ 197</span></small>
+                  </span>
+                </label>
+                <label class="sim-type-btn">
+                  <input type="radio" name="type" value="completo" id="sim-type-completo">
+                  <span class="option__body">
+                    <i data-lucide="shopping-bag"></i>
+                    <strong>Completo</strong>
+                    <small>Catálogo/Pedidos • <span class="type-price">R$ 247</span></small>
+                  </span>
                 </label>
               </div>
+            </fieldset>
 
-              <!-- Inputs de Nome e Empresa -->
-              <div class="field-row grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                <div class="field">
-                  <label for="sim-name" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">Seu nome</label>
-                  <input type="text" id="sim-name" name="name" autocomplete="name" placeholder="Ex: Lucas Silva" aria-describedby="sim-name-error" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all">
-                  <p class="field-error text-xs text-rose-400 mt-1" id="sim-name-error" hidden>Digite seu nome para enviarmos a proposta.</p>
-                </div>
-                <div class="field">
-                  <label for="sim-business" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">Nome do negócio</label>
-                  <input type="text" id="sim-business" name="business" autocomplete="organization" placeholder="Ex: Padaria Novo Horizonte" aria-describedby="sim-business-error" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all">
-                  <p class="field-error text-xs text-rose-400 mt-1" id="sim-business-error" hidden>Digite o nome do seu negócio.</p>
-                </div>
+            <!-- 2. Quantidade de páginas -->
+            <div class="field-group">
+              <div class="range-head">
+                <label for="sim-pages">2. Quantidade de páginas</label>
+                <output id="sim-pages-output" for="sim-pages">5 páginas</output>
               </div>
+              <input type="range" id="sim-pages" name="pages" min="1" max="20" value="5" aria-describedby="sim-pages-help">
+              <p class="field-help" id="sim-pages-help">5 páginas inclusas no pacote base. Cada página adicional soma + R$ 20.</p>
             </div>
 
-            <!-- Painel de Resumo / Orçamento (5 cols) -->
-            <aside class="sim__summary lg:col-span-5 sticky top-24" aria-labelledby="sim-summary-title">
-              <div class="summary bg-slate-900 border border-slate-800 rounded-3xl p-6 md:p-8 shadow-2xl">
-                <h3 id="sim-summary-title" class="text-lg font-bold text-white mb-4 pb-3 border-b border-slate-800 flex items-center justify-between">
-                  <span>Resumo do Orçamento</span>
-                  <span class="text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold">Online</span>
-                </h3>
+            <!-- 3. Recursos opcionais e extras -->
+            <fieldset class="field-group">
+              <legend>3. Recursos Opcionais e Extras</legend>
+              <div class="sim-extras-grid">
+                <label class="check" id="sim-wrap-whatsapp">
+                  <input type="checkbox" name="extras" value="whatsapp" id="sim-extra-whatsapp" checked disabled>
+                  <span>
+                    <i data-lucide="message-circle"></i>
+                    <span>WhatsApp integrado</span>
+                    <em id="sim-badge-whatsapp" class="badge--included">(Incluso • R$ 0)</em>
+                  </span>
+                </label>
 
-                <ul class="summary__lines space-y-2.5 text-sm text-slate-300 pb-4 border-b border-slate-800" id="sim-lines"></ul>
+                <label class="check" id="sim-wrap-seo">
+                  <input type="checkbox" name="extras" value="seo" id="sim-extra-seo" checked disabled>
+                  <span>
+                    <i data-lucide="map-pin"></i>
+                    <span>Perfil Google + SEO</span>
+                    <em id="sim-badge-seo" class="badge--included">(Incluso no plano • R$ 0)</em>
+                  </span>
+                </label>
 
-                <div class="summary__total pt-6">
-                  <span class="text-xs uppercase tracking-wider font-bold text-slate-400 block">Total estimado do projeto</span>
-                  <strong id="sim-total" aria-live="polite" class="text-4xl md:text-5xl font-black text-white tracking-tight block mt-1">R$ 197</strong>
-                </div>
+                <label class="check" id="sim-wrap-textos">
+                  <input type="checkbox" name="extras" value="textos" id="sim-extra-textos" checked disabled>
+                  <span>
+                    <i data-lucide="type"></i>
+                    <span>Criação de Textos</span>
+                    <em id="sim-badge-textos" class="badge--included">(Incluso no plano • R$ 0)</em>
+                  </span>
+                </label>
 
-                <p class="summary__monthly mt-2 text-sm font-semibold text-indigo-400" id="sim-monthly" hidden></p>
+                <label class="check" id="sim-wrap-catalogo">
+                  <input type="checkbox" name="extras" value="catalogo" id="sim-extra-catalogo">
+                  <span>
+                    <i data-lucide="book-open"></i>
+                    <span>Cardápio / Catálogo</span>
+                    <em id="sim-badge-catalogo">(+R$ 30)</em>
+                  </span>
+                </label>
 
-                <p class="summary__delivery flex items-center gap-2 mt-4 px-3.5 py-2 rounded-xl bg-slate-800/80 border border-slate-700/60 text-xs font-semibold text-slate-300">
-                  <i data-lucide="clock" class="w-4 h-4 text-indigo-400 shrink-0"></i>
-                  <span id="sim-delivery">Entrega em até 7 dias úteis</span>
-                </p>
-
-                <button type="submit" class="btn btn--block w-full mt-6 py-4 px-6 rounded-xl font-bold text-base bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg shadow-emerald-500/25 transition-all flex items-center justify-center gap-2 cursor-pointer border-0" id="sim-submit">
-                  <span>Enviar pelo WhatsApp</span>
-                  <i data-lucide="send" class="w-4 h-4"></i>
-                </button>
-
-                <p class="summary__note text-xs text-center text-slate-500 mt-3">Valor estimado sem fidelidade. Proposta formalizada após conversa.</p>
+                <label class="check check--full" id="sim-wrap-agendamento">
+                  <input type="checkbox" name="extras" value="agendamento" id="sim-extra-agendamento">
+                  <span>
+                    <i data-lucide="calendar-clock"></i>
+                    <span>Formulário / Agendamento no WhatsApp</span>
+                    <em id="sim-badge-agendamento">(+R$ 25)</em>
+                  </span>
+                </label>
               </div>
-            </aside>
-          </form>
-        </div>
-      </section>
+            </fieldset>
 
-      <!-- ============ FAQ ============ -->
-      <section class="section faq py-16" id="duvidas" aria-labelledby="faq-title">
-        <div class="container max-w-4xl mx-auto px-4">
-          <header class="section-head text-center mb-10">
-            <h2 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight" id="faq-title">Perguntas frequentes</h2>
-            <p class="text-slate-400 text-sm mt-2">Tire suas dúvidas antes de começar seu projeto com a Easy Sites.</p>
-          </header>
+            <!-- 4. Prazo de entrega -->
+            <fieldset class="field-group">
+              <legend>4. Prazo de entrega</legend>
+              <div class="segmented">
+                <label>
+                  <input type="radio" name="deadline" value="normal" id="sim-deadline-normal" checked>
+                  <span>Normal (Padrão)</span>
+                </label>
+                <label>
+                  <input type="radio" name="deadline" value="express" id="sim-deadline-express">
+                  <span>Expresso (+30%)</span>
+                </label>
+              </div>
+            </fieldset>
 
-          <div class="faq__list space-y-3">
-            <details class="faq__item group bg-slate-900/60 border border-slate-800 rounded-2xl p-5 transition-all" id="faq-1">
-              <summary class="flex items-center justify-between font-bold text-base text-slate-200 cursor-pointer list-none">
-                <span>Preciso entender de tecnologia?</span>
-                <i data-lucide="plus" class="w-5 h-5 text-indigo-400 group-open:rotate-45 transition-transform duration-200"></i>
-              </summary>
-              <p class="text-slate-400 text-sm mt-3 pt-3 border-t border-slate-800/80 leading-relaxed">Não. Você conta como funciona seu negócio e nós cuidamos de domínio, hospedagem, textos e publicação.</p>
-            </details>
+            <!-- 5. Manutenção Mensal Opcional -->
+            <div class="field-group">
+              <label class="switch" for="sim-maintenance">
+                <span class="switch__label">
+                  <strong>Manutenção e atualizações mensais (Opcional)</strong>
+                  <small>Troca de preços, fotos e promoções por apenas <span class="text-accent">+ R$ 29/mês</span> (1º mês grátis)</small>
+                </span>
+                <input type="checkbox" id="sim-maintenance" name="maintenance" role="switch">
+                <span class="switch__track" aria-hidden="true"></span>
+              </label>
+            </div>
 
-            <details class="faq__item group bg-slate-900/60 border border-slate-800 rounded-2xl p-5 transition-all" id="faq-2">
-              <summary class="flex items-center justify-between font-bold text-base text-slate-200 cursor-pointer list-none">
-                <span>O domínio fica no meu nome?</span>
-                <i data-lucide="plus" class="w-5 h-5 text-indigo-400 group-open:rotate-45 transition-transform duration-200"></i>
-              </summary>
-              <p class="text-slate-400 text-sm mt-3 pt-3 border-t border-slate-800/80 leading-relaxed">Sim. O domínio é registrado no seu CPF ou CNPJ. O site é seu, mesmo se um dia você sair da Easy Sites.</p>
-            </details>
-
-            <details class="faq__item group bg-slate-900/60 border border-slate-800 rounded-2xl p-5 transition-all" id="faq-3">
-              <summary class="flex items-center justify-between font-bold text-base text-slate-200 cursor-pointer list-none">
-                <span>O que acontece depois do primeiro ano?</span>
-                <i data-lucide="plus" class="w-5 h-5 text-indigo-400 group-open:rotate-45 transition-transform duration-200"></i>
-              </summary>
-              <p class="text-slate-400 text-sm mt-3 pt-3 border-t border-slate-800/80 leading-relaxed">O domínio .com.br fica 100% registrado no seu CPF ou CNPJ (taxa anual oficial do Registro.br de apenas R$ 40/ano). Avisamos você com 30 dias de antecedência antes do vencimento para renovar conosco ou levar para onde preferir, sem fidelidade, sem taxas ocultas e sem letras miúdas.</p>
-            </details>
-
-            <details class="faq__item group bg-slate-900/60 border border-slate-800 rounded-2xl p-5 transition-all" id="faq-4">
-              <summary class="flex items-center justify-between font-bold text-base text-slate-200 cursor-pointer list-none">
-                <span>Posso pedir alterações depois que o site estiver no ar?</span>
-                <i data-lucide="plus" class="w-5 h-5 text-indigo-400 group-open:rotate-45 transition-transform duration-200"></i>
-              </summary>
-              <p class="text-slate-400 text-sm mt-3 pt-3 border-t border-slate-800/80 leading-relaxed">Pode. Ajustes nos primeiros 30 dias são gratuitos. Depois, você contrata a manutenção mensal ou paga por alteração.</p>
-            </details>
-
-            <details class="faq__item group bg-slate-900/60 border border-slate-800 rounded-2xl p-5 transition-all" id="faq-5">
-              <summary class="flex items-center justify-between font-bold text-base text-slate-200 cursor-pointer list-none">
-                <span>Como funciona o pagamento?</span>
-                <i data-lucide="plus" class="w-5 h-5 text-indigo-400 group-open:rotate-45 transition-transform duration-200"></i>
-              </summary>
-              <p class="text-slate-400 text-sm mt-3 pt-3 border-t border-slate-800/80 leading-relaxed">50% na aprovação do layout e 50% na entrega, via Pix, ou parcelado em até 12x no cartão.</p>
-            </details>
-
-            <details class="faq__item group bg-slate-900/60 border border-slate-800 rounded-2xl p-5 transition-all" id="faq-6">
-              <summary class="flex items-center justify-between font-bold text-base text-slate-200 cursor-pointer list-none">
-                <span>Meu site vai aparecer no Google?</span>
-                <i data-lucide="plus" class="w-5 h-5 text-indigo-400 group-open:rotate-45 transition-transform duration-200"></i>
-              </summary>
-              <p class="text-slate-400 text-sm mt-3 pt-3 border-t border-slate-800/80 leading-relaxed">Configuramos o SEO técnico, o Search Console e o Perfil da Empresa no Google. A posição depende também da concorrência na sua região.</p>
-            </details>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============ CTA FINAL ============ -->
-      <section class="final-cta py-16" aria-labelledby="final-title">
-        <div class="container max-w-5xl mx-auto px-4">
-          <div class="final-cta__card bg-gradient-to-r from-indigo-600 to-blue-700 rounded-3xl p-8 md:p-14 text-center text-white shadow-2xl relative overflow-hidden">
-            <h2 id="final-title" class="text-3xl md:text-5xl font-extrabold tracking-tight">Vamos colocar seu negócio na internet?</h2>
-            <p class="text-indigo-100 text-base md:text-lg max-w-xl mx-auto mt-4">Simule agora ou chame a gente no WhatsApp. Respondemos em horário comercial no mesmo dia.</p>
-            <div class="final-cta__actions flex items-center justify-center gap-4 mt-8 flex-wrap">
-              <a href="#simulador" class="btn bg-white hover:bg-slate-100 text-indigo-900 font-bold px-8 py-4 rounded-xl shadow-md transition-all text-sm md:text-base" id="final-cta-simular">Simular orçamento</a>
-              <a href="https://wa.me/5541997225030?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Easy%20Sites%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20para%20o%20meu%20site." class="btn border-2 border-white/60 hover:border-white text-white font-bold px-8 py-4 rounded-xl transition-all text-sm md:text-base flex items-center gap-2" id="final-cta-whatsapp" data-whatsapp="contact" target="_blank" rel="noopener">
-                <i data-lucide="message-circle" class="w-5 h-5"></i>Falar no WhatsApp
-              </a>
+            <!-- 6. Inputs Nome e Empresa -->
+            <div class="field-row">
+              <div class="field">
+                <label for="sim-name">Seu nome</label>
+                <input type="text" id="sim-name" name="name" autocomplete="name" placeholder="Ex: Lucas Silva" aria-describedby="sim-name-error" required>
+                <p class="field-error" id="sim-name-error" hidden>Digite seu nome para enviarmos a proposta.</p>
+              </div>
+              <div class="field">
+                <label for="sim-business">Nome do negócio</label>
+                <input type="text" id="sim-business" name="business" autocomplete="organization" placeholder="Ex: Padaria Novo Horizonte" aria-describedby="sim-business-error" required>
+                <p class="field-error" id="sim-business-error" hidden>Digite o nome do seu negócio.</p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <!-- ============ FOOTER ============ -->
-      <footer class="footer pt-16 pb-8 border-t border-slate-800/80 text-slate-400">
-        <div class="container max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-12 gap-10">
-          <div class="md:col-span-5">
-            <a href="#topo" class="brand brand--light inline-flex items-center gap-2 text-white font-bold text-xl mb-3" id="footer-brand" aria-label="Easy Sites, voltar ao topo">
+          <!-- Coluna da Direita: Resumo (Card Fixo/Destacado Escuro) -->
+          <aside class="sim__summary" aria-labelledby="sim-summary-title">
+            <div class="summary">
+              <h3 id="sim-summary-title" class="summary__title">
+                <span>Seu orçamento</span>
+                <span class="summary__status">Online</span>
+              </h3>
+
+              <ul class="summary__lines" id="sim-lines"></ul>
+
+              <div class="summary__total">
+                <span class="summary__total-label">Total estimado</span>
+                <strong id="sim-total" aria-live="polite" class="summary__total-value">R$ 197</strong>
+              </div>
+
+              <p class="summary__monthly" id="sim-monthly" hidden></p>
+
+              <p class="summary__delivery">
+                <i data-lucide="clock"></i>
+                <span id="sim-delivery">Entrega em até 7 dias úteis</span>
+              </p>
+
+              <button type="submit" class="sim__submit-btn" id="sim-submit">
+                <span>Enviar pelo WhatsApp</span>
+                <i data-lucide="send"></i>
+              </button>
+
+              <p class="summary__note">Valor estimado sem fidelidade. Proposta formalizada após conversa.</p>
+            </div>
+          </aside>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section faq" id="duvidas" aria-labelledby="faq-title">
+      <div class="container">
+        <header class="section-head section-head--center">
+          <h2 class="section-title" id="faq-title">Perguntas frequentes</h2>
+          <p class="section-lead">Tire suas dúvidas antes de começar seu projeto com a Easy Sites.</p>
+        </header>
+
+        <div class="faq__list">
+          <details class="faq__item" id="faq-1">
+            <summary>
+              <span>Preciso entender de tecnologia?</span>
+              <i data-lucide="plus"></i>
+            </summary>
+            <p>Não. Você conta como funciona seu negócio e nós cuidamos de domínio, hospedagem, textos e publicação.</p>
+          </details>
+
+          <details class="faq__item" id="faq-2">
+            <summary>
+              <span>O domínio fica no meu nome?</span>
+              <i data-lucide="plus"></i>
+            </summary>
+            <p>Sim. O domínio é registrado no seu CPF ou CNPJ. O site é seu, mesmo se um dia você sair da Easy Sites.</p>
+          </details>
+
+          <details class="faq__item" id="faq-3">
+            <summary>
+              <span>O que acontece depois do primeiro ano?</span>
+              <i data-lucide="plus"></i>
+            </summary>
+            <p>O domínio .com.br fica 100% registrado no seu CPF ou CNPJ (taxa anual oficial do Registro.br de apenas R$ 40/ano). Avisamos você com 30 dias de antecedência antes do vencimento para renovar conosco ou levar para onde preferir, sem fidelidade, sem taxas ocultas e sem letras miúdas.</p>
+          </details>
+
+          <details class="faq__item" id="faq-4">
+            <summary>
+              <span>Posso pedir alterações depois que o site estiver no ar?</span>
+              <i data-lucide="plus"></i>
+            </summary>
+            <p>Pode. Ajustes nos primeiros 30 dias são gratuitos. Depois, você contrata a manutenção mensal ou paga por alteração.</p>
+          </details>
+
+          <details class="faq__item" id="faq-5">
+            <summary>
+              <span>Como funciona o pagamento?</span>
+              <i data-lucide="plus"></i>
+            </summary>
+            <p>50% na aprovação do layout e 50% na entrega, via Pix, ou parcelado em até 12x no cartão.</p>
+          </details>
+
+          <details class="faq__item" id="faq-6">
+            <summary>
+              <span>Meu site vai aparecer no Google?</span>
+              <i data-lucide="plus"></i>
+            </summary>
+            <p>Configuramos o SEO técnico, o Search Console e o Perfil da Empresa no Google. A posição depende também da concorrência na sua região.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA FINAL ============ -->
+    <section class="final-cta" aria-labelledby="final-title">
+      <div class="container">
+        <div class="final-cta__card">
+          <h2 id="final-title">Vamos colocar seu negócio na internet?</h2>
+          <p>Simule agora ou chame a gente no WhatsApp. Respondemos em horário comercial no mesmo dia.</p>
+          <div class="final-cta__actions">
+            <a href="#simulador" class="btn btn--light btn--lg" id="final-cta-simular">Simular orçamento</a>
+            <a href="https://wa.me/5541997225030?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Easy%20Sites%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20para%20o%20meu%20site." class="btn--whatsapp btn--lg" id="final-cta-whatsapp" data-whatsapp="contact" target="_blank" rel="noopener">
+              <i data-lucide="message-circle"></i> Falar no WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <!-- Coluna 1: Marca & Localização -->
+          <div class="footer__brand">
+            <a href="#topo" class="brand brand--footer" id="footer-brand" aria-label="Easy Sites, voltar ao topo">
               <span class="brand__mark" aria-hidden="true"><span></span><span></span><span></span></span>
               <span class="brand__name">Easy Sites</span>
-              <span class="brand__tld text-indigo-400">.ia.br</span>
+              <span class="brand__tld">.ia.br</span>
             </a>
-            <p class="text-sm text-slate-400 leading-relaxed max-w-sm">Criação de sites profissionais para pequenos negócios locais.</p>
-            <p class="footer__location text-xs text-slate-400 flex items-center gap-1.5 mt-3"><i data-lucide="map-pin" class="w-4 h-4 text-indigo-400 shrink-0"></i>Curitiba, PR — Atendendo negócios locais em todo o Brasil</p>
+            <p>Criação de sites profissionais para pequenos negócios locais.</p>
+            <p class="footer__location">
+              <i data-lucide="map-pin"></i> Curitiba, PR — Atendendo negócios locais em todo o Brasil
+            </p>
           </div>
 
-          <nav class="md:col-span-3" aria-label="Links do rodapé">
-            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-200 mb-3">Navegação</h3>
-            <ul class="space-y-2 text-sm">
-              <li><a href="#como-funciona" class="hover:text-white transition-colors" id="footer-como-funciona">Como funciona</a></li>
-              <li><a href="#portfolio" class="hover:text-white transition-colors" id="footer-portfolio">Portfólio</a></li>
-              <li><a href="#planos" class="hover:text-white transition-colors" id="footer-planos">Planos</a></li>
-              <li><a href="#duvidas" class="hover:text-white transition-colors" id="footer-duvidas">Perguntas frequentes</a></li>
+          <!-- Coluna 2: Navegação -->
+          <nav class="footer__col" aria-label="Links do rodapé">
+            <h3>Navegação</h3>
+            <ul>
+              <li><a href="#como-funciona" id="footer-como-funciona">Como funciona</a></li>
+              <li><a href="#portfolio" id="footer-portfolio">Portfólio</a></li>
+              <li><a href="#planos" id="footer-planos">Planos</a></li>
+              <li><a href="#duvidas" id="footer-duvidas">Perguntas frequentes</a></li>
             </ul>
           </nav>
 
-          <div class="md:col-span-4">
-            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-200 mb-3">Contato Direto</h3>
-            <ul class="space-y-2.5 text-sm">
-              <li><a href="mailto:contato@easysites.ia.br" class="flex items-center gap-2 hover:text-white transition-colors" id="footer-email"><i data-lucide="mail" class="w-4 h-4 text-indigo-400"></i>contato@easysites.ia.br</a></li>
-              <li><a href="https://wa.me/5541997225030" class="flex items-center gap-2 hover:text-white transition-colors" id="footer-whatsapp" data-whatsapp="contact" target="_blank" rel="noopener"><i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>WhatsApp: (41) 99722-5030</a></li>
+          <!-- Coluna 3: Contato Direto -->
+          <div class="footer__col">
+            <h3>Contato Direto</h3>
+            <ul>
+              <li>
+                <a href="mailto:contato@easysites.ia.br" id="footer-email">
+                  <i data-lucide="mail"></i> contato@easysites.ia.br
+                </a>
+              </li>
+              <li>
+                <a href="https://wa.me/5541997225030" id="footer-whatsapp" data-whatsapp="contact" target="_blank" rel="noopener">
+                  <i data-lucide="message-circle"></i> WhatsApp: (41) 99722-5030
+                </a>
+              </li>
             </ul>
           </div>
         </div>
 
-        <div class="container max-w-7xl mx-auto px-4 pt-8 mt-12 border-t border-slate-900 flex items-center justify-between text-xs text-slate-500 flex-wrap gap-4">
+        <div class="footer__bottom">
           <p>&copy; <span id="year">2026</span> Easy Sites. Todos os direitos reservados.</p>
           <p>easysites.ia.br</p>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
   </main>
 
   <!-- ============ PORTFOLIO MODAL (LIGHTBOX) ============ -->
