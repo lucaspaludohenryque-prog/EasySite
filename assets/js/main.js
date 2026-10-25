@@ -7,11 +7,11 @@
  * - Budget simulator that sends the summary through WhatsApp
  */
 
-const WHATSAPP_PHONE = '5500000000000';
+const WHATSAPP_NUMBER = '5541997225030';
 
 const CONFIG = {
   // Número de WhatsApp no formato internacional, só dígitos: 55 + DDD + número.
-  whatsapp: WHATSAPP_PHONE,
+  whatsapp: WHATSAPP_NUMBER,
   types: {
     landing: { label: 'Landing page', base: 497, includedPages: 1, pageCost: 0, days: 5 },
     institucional: { label: 'Site institucional', base: 997, includedPages: 5, pageCost: 120, days: 7 },
@@ -35,7 +35,7 @@ const PLAN_MESSAGES = {
   Premium: 'Olá! Vim pelo site da Easy Sites e quero contratar o Plano Premium (R$ 1.797).',
 };
 
-const GENERAL_QUESTION_MESSAGE = 'Olá! Vim pelo site da Easy Sites e gostaria de tirar uma dúvida sobre criação de sites.';
+const GENERAL_QUESTION_MESSAGE = 'Olá! Vim pelo site da Easy Sites e gostaria de fazer um orçamento para o meu site.';
 
 const PORTFOLIO_PROJECTS = {
   jaja: {
