@@ -6,6 +6,9 @@ Professional web application repository for Easy Site.
 
 Easy Site provides a modular, high-performance web structure designed for rapid deployment, modern visual standards, and streamlined maintenance.
 
+- **Live Site:** [https://lucaspaludohenryque-prog.github.io/EasySite/](https://lucaspaludohenryque-prog.github.io/EasySite/)
+- **Repository:** [https://github.com/lucaspaludohenryque-prog/EasySite](https://github.com/lucaspaludohenryque-prog/EasySite)
+
 ## Project Structure
 
 ```text
