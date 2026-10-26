@@ -385,6 +385,11 @@ function initSimulator() {
   const rangeHelp = document.getElementById('sim-pages-help');
   const linesEl = document.getElementById('sim-lines');
   const totalEl = document.getElementById('sim-total');
+  const liveTotalEl = document.getElementById('sim-live-total');
+  const liveDeliveryEl = document.getElementById('sim-live-delivery');
+  const mobileBar = document.getElementById('sim-mobile-bar');
+  const mobileTotalEl = document.getElementById('sim-mobile-total');
+  const mobileCta = document.getElementById('sim-mobile-cta');
   const monthlyEl = document.getElementById('sim-monthly');
   const deliveryEl = document.getElementById('sim-delivery');
   const nameInput = document.getElementById('sim-name');
@@ -618,9 +623,14 @@ function initSimulator() {
 
   const animateTotal = (target) => {
     if (frame) cancelAnimationFrame(frame);
+    const setAllTotals = (formatted) => {
+      if (totalEl) totalEl.textContent = formatted;
+      if (liveTotalEl) liveTotalEl.textContent = formatted;
+      if (mobileTotalEl) mobileTotalEl.textContent = formatted;
+    };
     if (prefersReducedMotion) {
       displayedTotal = target;
-      if (totalEl) totalEl.textContent = brl.format(target);
+      setAllTotals(brl.format(target));
       return;
     }
     const start = displayedTotal;
@@ -630,7 +640,7 @@ function initSimulator() {
       const progress = Math.min(1, (now - startTime) / duration);
       const eased = 1 - Math.pow(1 - progress, 3);
       displayedTotal = Math.round(start + (target - start) * eased);
-      if (totalEl) totalEl.textContent = brl.format(displayedTotal);
+      setAllTotals(brl.format(displayedTotal));
       if (progress < 1) frame = requestAnimationFrame(tick);
     };
     frame = requestAnimationFrame(tick);
@@ -698,6 +708,9 @@ function initSimulator() {
 
     if (deliveryEl) {
       deliveryEl.textContent = `Entrega em até ${result.days} dias úteis`;
+    }
+    if (liveDeliveryEl) {
+      liveDeliveryEl.textContent = `Entrega em até ${result.days} dias úteis`;
     }
 
     return { state, result };
@@ -768,6 +781,52 @@ function initSimulator() {
 
     window.open(whatsappUrl(message), '_blank', 'noopener');
   });
+
+  // Mobile sticky CTA button
+  mobileCta?.addEventListener('click', () => {
+    const nameOk = validateField(nameInput);
+    const businessOk = validateField(businessInput);
+    if (!nameOk || !businessOk) {
+      const targetInput = !nameOk ? nameInput : businessInput;
+      targetInput?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => targetInput?.focus({ preventScroll: true }), 300);
+      return;
+    }
+    form.dispatchEvent(new Event('submit', { cancelable: true }));
+  });
+
+  // IntersectionObserver to show mobile floating bar when inside #simulador
+  const simSection = document.getElementById('simulador');
+  if (simSection && mobileBar) {
+    const simObserver = new IntersectionObserver(([entry]) => {
+      const isMobile = window.innerWidth <= 767;
+      const shouldShow = entry.isIntersecting && isMobile;
+      if (shouldShow) {
+        mobileBar.hidden = false;
+        requestAnimationFrame(() => {
+          mobileBar.classList.add('is-visible');
+          document.body.classList.add('has-sim-bar');
+        });
+      } else {
+        mobileBar.classList.remove('is-visible');
+        document.body.classList.remove('has-sim-bar');
+        setTimeout(() => {
+          if (!mobileBar.classList.contains('is-visible')) {
+            mobileBar.hidden = true;
+          }
+        }, 350);
+      }
+    }, { threshold: 0.05 });
+    simObserver.observe(simSection);
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 767) {
+        mobileBar.classList.remove('is-visible');
+        mobileBar.hidden = true;
+        document.body.classList.remove('has-sim-bar');
+      }
+    }, { passive: true });
+  }
 
   // Initial setup: Institucional R$ 197
   syncTypeRules('institucional');

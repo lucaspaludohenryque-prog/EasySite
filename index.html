@@ -190,23 +190,31 @@
         <ol class="steps__list">
           <li class="steps__item reveal">
             <span class="steps__node" aria-hidden="true">1</span>
-            <h3>Conversa rápida</h3>
-            <p>Em 15 minutos pelo WhatsApp entendemos seus serviços, seu público e seus concorrentes.</p>
+            <div class="steps__content">
+              <h3>Conversa rápida</h3>
+              <p>Em 15 minutos pelo WhatsApp entendemos seus serviços, seu público e seus concorrentes.</p>
+            </div>
           </li>
           <li class="steps__item reveal">
             <span class="steps__node" aria-hidden="true">2</span>
-            <h3>Layout para aprovar</h3>
-            <p>Enviamos a primeira versão do visual. Você pede ajustes até ficar do seu jeito.</p>
+            <div class="steps__content">
+              <h3>Layout para aprovar</h3>
+              <p>Enviamos a primeira versão do visual. Você pede ajustes até ficar do seu jeito.</p>
+            </div>
           </li>
           <li class="steps__item reveal">
             <span class="steps__node" aria-hidden="true">3</span>
-            <h3>Construção</h3>
-            <p>Escrevemos os textos, otimizamos as imagens e configuramos domínio, e-mail e Google.</p>
+            <div class="steps__content">
+              <h3>Construção</h3>
+              <p>Escrevemos os textos, otimizamos as imagens e configuramos domínio, e-mail e Google.</p>
+            </div>
           </li>
           <li class="steps__item reveal">
             <span class="steps__node" aria-hidden="true">4</span>
-            <h3>Site no ar</h3>
-            <p>Publicamos, conectamos ao seu Perfil da Empresa no Google e mostramos como tudo funciona.</p>
+            <div class="steps__content">
+              <h3>Site no ar</h3>
+              <p>Publicamos, conectamos ao seu Perfil da Empresa no Google e mostramos como tudo funciona.</p>
+            </div>
           </li>
         </ol>
       </div>
@@ -815,6 +823,21 @@
               </label>
             </div>
 
+            <!-- Mini-resumo Instantâneo Mobile / Tablet -->
+            <div class="sim-live-banner" id="sim-live-banner" aria-live="polite">
+              <div class="sim-live-banner__top">
+                <div class="sim-live-banner__info">
+                  <span class="sim-live-banner__label">Total Estimado</span>
+                  <strong class="sim-live-banner__price" id="sim-live-total">R$ 197</strong>
+                </div>
+                <div class="sim-live-banner__delivery">
+                  <i data-lucide="clock"></i>
+                  <span id="sim-live-delivery">Entrega em até 7 dias úteis</span>
+                </div>
+              </div>
+              <p class="sim-live-banner__note">Preencha seu nome e negócio abaixo para formalizar a proposta direto no WhatsApp:</p>
+            </div>
+
             <!-- 6. Inputs Nome e Empresa -->
             <div class="field-row">
               <div class="field">
@@ -1033,6 +1056,20 @@
   <a href="https://wa.me/5541997225030?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Easy%20Sites%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20para%20o%20meu%20site." class="wa-float" id="wa-float" data-whatsapp="contact" target="_blank" rel="noopener" aria-label="Falar com a Easy Sites no WhatsApp">
     <i data-lucide="message-circle"></i>
   </a>
+
+  <!-- Barra Flutuante Mobile do Simulador (#simulador) -->
+  <aside class="sim-mobile-bar" id="sim-mobile-bar" aria-label="Resumo do orçamento flutuante" hidden>
+    <div class="sim-mobile-bar__inner">
+      <div class="sim-mobile-bar__info">
+        <span class="sim-mobile-bar__label">Total estimado</span>
+        <strong class="sim-mobile-bar__price" id="sim-mobile-total">R$ 197</strong>
+      </div>
+      <button type="button" class="sim-mobile-bar__btn" id="sim-mobile-cta">
+        <i data-lucide="send"></i>
+        <span>Pedir no WhatsApp</span>
+      </button>
+    </div>
+  </aside>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
   <script src="assets/js/main.js" defer></script>
