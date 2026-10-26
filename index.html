@@ -325,7 +325,7 @@
             <span class="bento__icon"><i data-lucide="message-circle"></i></span>
             <h3>WhatsApp em todas as páginas</h3>
             <p>O visitante toca no botão e já cai na sua conversa, com mensagem pronta.</p>
-            <div class="bento__wa-mockup" aria-hidden="true">
+            <div class="bento__wa-mockup bento__foot" aria-hidden="true">
               <div class="bento__wa-btn">
                 <i data-lucide="message-circle"></i>
                 <span>Falar no WhatsApp</span>
@@ -338,7 +338,7 @@
             <span class="bento__icon"><i data-lucide="search"></i></span>
             <h3>Pronto para aparecer no Google</h3>
             <p>SEO local configurado para quem busca o seu serviço na sua cidade.</p>
-            <div class="bento__search-mockup" aria-hidden="true">
+            <div class="bento__search-mockup bento__foot" aria-hidden="true">
               <div class="bento__search-bar">
                 <i data-lucide="search"></i>
                 <span class="bento__search-query">easysites.ia.br/seu-negocio</span>
@@ -351,15 +351,20 @@
             <span class="bento__icon"><i data-lucide="zap"></i></span>
             <h3>Rápido no celular</h3>
             <p>Imagens otimizadas e código leve. O cliente não desiste esperando carregar.</p>
+            <div class="bento__meter bento__foot" aria-hidden="true">
+              <span class="bento__meter-head">
+                <span>PageSpeed no celular</span>
+                <strong>99/100</strong>
+              </span>
+              <span class="bento__meter-bar"><span></span></span>
+            </div>
           </article>
 
           <article class="bento__cell bento__cell--e reveal">
-            <div>
-              <span class="bento__icon"><i data-lucide="shield-check"></i></span>
-              <h3>Infraestrutura inclusa, sem dor de cabeça</h3>
-              <p>Você não precisa entender de tecnologia. A gente configura e mantém.</p>
-            </div>
-            <ul class="chip-list" aria-label="Itens de infraestrutura inclusos">
+            <span class="bento__icon"><i data-lucide="shield-check"></i></span>
+            <h3>Infraestrutura inclusa, sem dor de cabeça</h3>
+            <p>Você não precisa entender de tecnologia. A gente configura e mantém.</p>
+            <ul class="chip-list bento__foot" aria-label="Itens de infraestrutura inclusos">
               <li class="chip"><i data-lucide="lock"></i>Certificado SSL</li>
               <li class="chip"><i data-lucide="globe"></i>Domínio .com.br</li>
               <li class="chip"><i data-lucide="server"></i>Hospedagem</li>
@@ -419,81 +424,73 @@
 
       <ul class="portfolio__track" id="portfolio-track" tabindex="0" aria-label="Projetos do portfólio">
         <li class="project reveal" data-project="jaja">
-          <div class="bezel">
-            <div class="bezel__core project__preview">
-              <img src="assets/img/portfolio-jaja-banho-tosa.jpg" alt="Página inicial do site Jajá Banho e Tosa" loading="lazy" width="1200" height="896">
-              <div class="project__overlay">
-                <button type="button" class="btn btn--light btn--sm project__open-btn" data-open-project="jaja">
-                  <i data-lucide="eye"></i> Ver detalhes do projeto
-                </button>
-              </div>
+          <div class="project__media">
+            <img src="assets/img/portfolio-jaja-banho-tosa.jpg" alt="Página inicial do site Jajá Banho e Tosa" loading="lazy" width="1200" height="896">
+            <div class="project__overlay">
+              <button type="button" class="btn btn--light btn--sm project__open-btn" data-open-project="jaja">
+                <i data-lucide="eye"></i> Ver detalhes do projeto
+              </button>
             </div>
           </div>
           <div class="project__meta">
             <h3>Jajá Banho e Tosa</h3>
             <span class="tag">Pet shop</span>
           </div>
-          <p>Agendamento de banho pelo WhatsApp e tabela de serviços atualizada.</p>
+          <p class="project__desc">Agendamento de banho pelo WhatsApp e tabela de serviços atualizada.</p>
           <button type="button" class="btn btn--ghost btn--sm project__card-btn" data-open-project="jaja">
             <i data-lucide="eye"></i> Ver detalhes do projeto
           </button>
         </li>
         <li class="project reveal" data-project="padaria">
-          <div class="bezel">
-            <div class="bezel__core project__preview">
-              <img src="assets/img/portfolio-padaria-novo-horizonte.jpg" alt="Página inicial do site Padaria Novo Horizonte" loading="lazy" width="1200" height="896">
-              <div class="project__overlay">
-                <button type="button" class="btn btn--light btn--sm project__open-btn" data-open-project="padaria">
-                  <i data-lucide="eye"></i> Ver detalhes do projeto
-                </button>
-              </div>
+          <div class="project__media">
+            <img src="assets/img/portfolio-padaria-novo-horizonte.jpg" alt="Página inicial do site Padaria Novo Horizonte" loading="lazy" width="1200" height="896">
+            <div class="project__overlay">
+              <button type="button" class="btn btn--light btn--sm project__open-btn" data-open-project="padaria">
+                <i data-lucide="eye"></i> Ver detalhes do projeto
+              </button>
             </div>
           </div>
           <div class="project__meta">
             <h3>Padaria Novo Horizonte</h3>
             <span class="tag">Padaria</span>
           </div>
-          <p>Cardápio digital com fotos dos produtos e pedidos para retirada no WhatsApp.</p>
+          <p class="project__desc">Cardápio digital com fotos dos produtos e pedidos para retirada no WhatsApp.</p>
           <button type="button" class="btn btn--ghost btn--sm project__card-btn" data-open-project="padaria">
             <i data-lucide="eye"></i> Ver detalhes do projeto
           </button>
         </li>
         <li class="project reveal" data-project="doces">
-          <div class="bezel">
-            <div class="bezel__core project__preview">
-              <img src="assets/img/portfolio-doces-da-ka.jpg" alt="Página inicial do site Doces da Ká" loading="lazy" width="1200" height="896">
-              <div class="project__overlay">
-                <button type="button" class="btn btn--light btn--sm project__open-btn" data-open-project="doces">
-                  <i data-lucide="eye"></i> Ver detalhes do projeto
-                </button>
-              </div>
+          <div class="project__media">
+            <img src="assets/img/portfolio-doces-da-ka.jpg" alt="Página inicial do site Doces da Ká" loading="lazy" width="1200" height="896">
+            <div class="project__overlay">
+              <button type="button" class="btn btn--light btn--sm project__open-btn" data-open-project="doces">
+                <i data-lucide="eye"></i> Ver detalhes do projeto
+              </button>
             </div>
           </div>
           <div class="project__meta">
             <h3>Doces da Ká</h3>
             <span class="tag">Confeitaria</span>
           </div>
-          <p>Vitrine de doces artesanais com encomendas organizadas por data.</p>
+          <p class="project__desc">Vitrine de doces artesanais com encomendas organizadas por data.</p>
           <button type="button" class="btn btn--ghost btn--sm project__card-btn" data-open-project="doces">
             <i data-lucide="eye"></i> Ver detalhes do projeto
           </button>
         </li>
         <li class="project reveal" data-project="clinica">
-          <div class="bezel">
-            <div class="bezel__core project__preview">
-              <img src="assets/img/portfolio-clinica-sorriso-vivo.jpg" alt="Página inicial do projeto conceito Clínica Sorriso Vivo" loading="lazy" width="1200" height="896">
-              <div class="project__overlay">
-                <button type="button" class="btn btn--light btn--sm project__open-btn" data-open-project="clinica">
-                  <i data-lucide="eye"></i> Ver detalhes do projeto
-                </button>
-              </div>
+          <div class="project__media">
+            <img src="assets/img/portfolio-clinica-sorriso-vivo.jpg" alt="Página inicial do projeto conceito Clínica Sorriso Vivo" loading="lazy" width="1200" height="896">
+            <div class="project__overlay">
+              <button type="button" class="btn btn--light btn--sm project__open-btn" data-open-project="clinica">
+                <i data-lucide="eye"></i> Ver detalhes do projeto
+              </button>
             </div>
           </div>
           <div class="project__meta">
             <h3>Clínica Sorriso Vivo</h3>
             <span class="tag tag--muted">Projeto conceito</span>
           </div>
-          <p>Modelo para clínicas odontológicas com agendamento de avaliação.</p>
+          <p class="project__desc">Modelo para clínicas odontológicas com agendamento de avaliação.</p>
           <button type="button" class="btn btn--ghost btn--sm project__card-btn" data-open-project="clinica">
             <i data-lucide="eye"></i> Ver detalhes do projeto
           </button>
@@ -607,84 +604,68 @@
         <div class="pricing__grid">
           <!-- Plano 1: Essencial -->
           <article class="plan-card reveal">
-            <div>
-              <h3 class="plan-card__name">Essencial</h3>
-              <p class="plan-card__desc">Uma página moderna e direta para colocar seu negócio na internet rápido.</p>
-              
-              <div class="plan-card__price">
-                <span class="currency">R$</span>
-                <span class="amount">147</span>
-                <span class="period">pagamento único</span>
-              </div>
-
-              <a class="plan-card__cta plan-card__cta--outlined" id="plan-essencial-cta" data-plan="Essencial" href="https://wa.me/5541997225030?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Easy%20Sites%20e%20quero%20contratar%20o%20Plano%20Essencial%20de%20R$%20147.">
-                Escolher Essencial
-              </a>
-
-              <ul class="plan-card__features">
-                <li><i data-lucide="check"></i><span>Landing page completa (1 página)</span></li>
-                <li><i data-lucide="check"></i><span>Botão de orçamento direto no WhatsApp</span></li>
-                <li><i data-lucide="check"></i><span>Feito para celular e computador</span></li>
-                <li><i data-lucide="check"></i><span>Domínio .com.br e hospedagem inclusos por 1 ano</span></li>
-                <li><i data-lucide="check"></i><span>Entrega rápida em até 5 dias úteis</span></li>
-              </ul>
+            <h3 class="plan-card__name">Essencial</h3>
+            <p class="plan-card__desc">Uma página moderna e direta para colocar seu negócio na internet rápido.</p>
+            <div class="plan-card__price">
+              <span class="currency">R$</span>
+              <span class="amount">147</span>
+              <span class="period">pagamento único</span>
             </div>
+            <ul class="plan-card__features">
+              <li><i data-lucide="check"></i><span>Landing page completa (1 página)</span></li>
+              <li><i data-lucide="check"></i><span>Botão de orçamento direto no WhatsApp</span></li>
+              <li><i data-lucide="check"></i><span>Feito para celular e computador</span></li>
+              <li><i data-lucide="check"></i><span>Domínio .com.br e hospedagem inclusos por 1 ano</span></li>
+              <li><i data-lucide="check"></i><span>Entrega rápida em até 5 dias úteis</span></li>
+            </ul>
+            <a class="plan-card__cta plan-card__cta--outlined" id="plan-essencial-cta" data-plan="Essencial" href="https://wa.me/5541997225030?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Easy%20Sites%20e%20quero%20contratar%20o%20Plano%20Essencial%20de%20R$%20147.">
+              Escolher Essencial
+            </a>
           </article>
 
           <!-- Plano 2: Profissional (Destaque) -->
           <article class="plan-card plan-card--featured reveal">
             <span class="plan-card__badge">★ Mais escolhido</span>
-
-            <div>
-              <h3 class="plan-card__name">Profissional</h3>
-              <p class="plan-card__desc">Site completo para empresas que querem passar confiança e aparecer no Google.</p>
-              
-              <div class="plan-card__price">
-                <span class="currency">R$</span>
-                <span class="amount">197</span>
-                <span class="period">pagamento único</span>
-              </div>
-
-              <a class="plan-card__cta plan-card__cta--primary" id="plan-profissional-cta" data-plan="Profissional" href="https://wa.me/5541997225030?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Easy%20Sites%20e%20quero%20contratar%20o%20Plano%20Profissional%20de%20R$%20197.">
-                Escolher Profissional
-              </a>
-
-              <ul class="plan-card__features">
-                <li class="highlight"><i data-lucide="check"></i><span>Tudo do plano Essencial +</span></li>
-                <li><i data-lucide="check"></i><span>Até 5 páginas ou seções completas</span></li>
-                <li><i data-lucide="check"></i><span>Textos profissionais (Copywriting) escritos pela Easy Sites</span></li>
-                <li><i data-lucide="check"></i><span>SEO local + Perfil da Empresa no Google</span></li>
-                <li><i data-lucide="check"></i><span>Galeria de fotos, avaliações e mapa</span></li>
-                <li><i data-lucide="check"></i><span>Entrega em até 7 dias úteis</span></li>
-              </ul>
+            <h3 class="plan-card__name">Profissional</h3>
+            <p class="plan-card__desc">Site completo para empresas que querem passar confiança e aparecer no Google.</p>
+            <div class="plan-card__price">
+              <span class="currency">R$</span>
+              <span class="amount">197</span>
+              <span class="period">pagamento único</span>
             </div>
+            <ul class="plan-card__features">
+              <li class="highlight"><i data-lucide="check"></i><span>Tudo do plano Essencial +</span></li>
+              <li><i data-lucide="check"></i><span>Até 5 páginas ou seções completas</span></li>
+              <li><i data-lucide="check"></i><span>Textos profissionais (Copywriting) escritos pela Easy Sites</span></li>
+              <li><i data-lucide="check"></i><span>SEO local + Perfil da Empresa no Google</span></li>
+              <li><i data-lucide="check"></i><span>Galeria de fotos, avaliações e mapa</span></li>
+              <li><i data-lucide="check"></i><span>Entrega em até 7 dias úteis</span></li>
+            </ul>
+            <a class="plan-card__cta plan-card__cta--primary" id="plan-profissional-cta" data-plan="Profissional" href="https://wa.me/5541997225030?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Easy%20Sites%20e%20quero%20contratar%20o%20Plano%20Profissional%20de%20R$%20197.">
+              Escolher Profissional
+            </a>
           </article>
 
           <!-- Plano 3: Completo -->
           <article class="plan-card reveal">
-            <div>
-              <h3 class="plan-card__name">Completo <small>(Catálogo &amp; Pedidos)</small></h3>
-              <p class="plan-card__desc">Para quem precisa de cardápio digital, catálogo de produtos ou agendamento no WhatsApp.</p>
-              
-              <div class="plan-card__price">
-                <span class="currency">R$</span>
-                <span class="amount">247</span>
-                <span class="period">pagamento único</span>
-              </div>
-
-              <a class="plan-card__cta plan-card__cta--outlined" id="plan-completo-cta" data-plan="Completo" href="https://wa.me/5541997225030?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Easy%20Sites%20e%20quero%20contratar%20o%20Plano%20Completo%20de%20R$%20247.">
-                Escolher Completo
-              </a>
-
-              <ul class="plan-card__features">
-                <li class="highlight"><i data-lucide="check"></i><span>Tudo do plano Profissional +</span></li>
-                <li><i data-lucide="check"></i><span>Cardápio digital ou catálogo interativo de produtos</span></li>
-                <li><i data-lucide="check"></i><span>Pedidos ou pré-agendamento direto no WhatsApp</span></li>
-                <li><i data-lucide="check"></i><span>E-mail profissional configurado</span></li>
-                <li><i data-lucide="check"></i><span>3 meses de manutenção grátis</span></li>
-                <li><i data-lucide="check"></i><span>Entrega em até 7 dias úteis</span></li>
-              </ul>
+            <h3 class="plan-card__name">Completo <small>(Catálogo &amp; Pedidos)</small></h3>
+            <p class="plan-card__desc">Para quem precisa de cardápio digital, catálogo de produtos ou agendamento no WhatsApp.</p>
+            <div class="plan-card__price">
+              <span class="currency">R$</span>
+              <span class="amount">247</span>
+              <span class="period">pagamento único</span>
             </div>
+            <ul class="plan-card__features">
+              <li class="highlight"><i data-lucide="check"></i><span>Tudo do plano Profissional +</span></li>
+              <li><i data-lucide="check"></i><span>Cardápio digital ou catálogo interativo de produtos</span></li>
+              <li><i data-lucide="check"></i><span>Pedidos ou pré-agendamento direto no WhatsApp</span></li>
+              <li><i data-lucide="check"></i><span>E-mail profissional configurado</span></li>
+              <li><i data-lucide="check"></i><span>3 meses de manutenção grátis</span></li>
+              <li><i data-lucide="check"></i><span>Entrega em até 7 dias úteis</span></li>
+            </ul>
+            <a class="plan-card__cta plan-card__cta--outlined" id="plan-completo-cta" data-plan="Completo" href="https://wa.me/5541997225030?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Easy%20Sites%20e%20quero%20contratar%20o%20Plano%20Completo%20de%20R$%20247.">
+              Escolher Completo
+            </a>
           </article>
         </div>
 
@@ -719,25 +700,28 @@
                 <label class="sim-type-btn">
                   <input type="radio" name="type" value="landing" id="sim-type-landing">
                   <span class="option__body">
-                    <i data-lucide="file"></i>
+                    <i data-lucide="file" class="option__icon"></i>
                     <strong>Landing page</strong>
-                    <small>1 página direta • <span class="type-price">R$ 147</span></small>
+                    <small>1 página direta</small>
+                    <span class="type-price">R$ 147</span>
                   </span>
                 </label>
                 <label class="sim-type-btn">
                   <input type="radio" name="type" value="institucional" id="sim-type-institucional" checked>
                   <span class="option__body">
-                    <i data-lucide="layout-template"></i>
+                    <i data-lucide="layout-template" class="option__icon"></i>
                     <strong>Institucional</strong>
-                    <small>Até 5 seções • <span class="type-price">R$ 197</span></small>
+                    <small>Até 5 seções</small>
+                    <span class="type-price">R$ 197</span>
                   </span>
                 </label>
                 <label class="sim-type-btn">
                   <input type="radio" name="type" value="completo" id="sim-type-completo">
                   <span class="option__body">
-                    <i data-lucide="shopping-bag"></i>
+                    <i data-lucide="shopping-bag" class="option__icon"></i>
                     <strong>Completo</strong>
-                    <small>Catálogo/Pedidos • <span class="type-price">R$ 247</span></small>
+                    <small>Catálogo e pedidos</small>
+                    <span class="type-price">R$ 247</span>
                   </span>
                 </label>
               </div>
@@ -759,45 +743,45 @@
               <div class="sim-extras-grid">
                 <label class="check" id="sim-wrap-whatsapp">
                   <input type="checkbox" name="extras" value="whatsapp" id="sim-extra-whatsapp" checked disabled>
-                  <span>
-                    <i data-lucide="message-circle"></i>
-                    <span>WhatsApp integrado</span>
+                  <span class="check__body">
+                    <i data-lucide="message-circle" class="check__icon"></i>
+                    <span class="check__label">WhatsApp integrado</span>
                     <em id="sim-badge-whatsapp" class="badge--included">(Incluso • R$ 0)</em>
                   </span>
                 </label>
 
                 <label class="check" id="sim-wrap-seo">
                   <input type="checkbox" name="extras" value="seo" id="sim-extra-seo" checked disabled>
-                  <span>
-                    <i data-lucide="map-pin"></i>
-                    <span>Perfil Google + SEO</span>
+                  <span class="check__body">
+                    <i data-lucide="map-pin" class="check__icon"></i>
+                    <span class="check__label">Perfil Google + SEO</span>
                     <em id="sim-badge-seo" class="badge--included">(Incluso no plano • R$ 0)</em>
                   </span>
                 </label>
 
                 <label class="check" id="sim-wrap-textos">
                   <input type="checkbox" name="extras" value="textos" id="sim-extra-textos" checked disabled>
-                  <span>
-                    <i data-lucide="type"></i>
-                    <span>Criação de Textos</span>
+                  <span class="check__body">
+                    <i data-lucide="type" class="check__icon"></i>
+                    <span class="check__label">Criação de Textos</span>
                     <em id="sim-badge-textos" class="badge--included">(Incluso no plano • R$ 0)</em>
                   </span>
                 </label>
 
                 <label class="check" id="sim-wrap-catalogo">
                   <input type="checkbox" name="extras" value="catalogo" id="sim-extra-catalogo">
-                  <span>
-                    <i data-lucide="book-open"></i>
-                    <span>Cardápio / Catálogo</span>
+                  <span class="check__body">
+                    <i data-lucide="book-open" class="check__icon"></i>
+                    <span class="check__label">Cardápio / Catálogo</span>
                     <em id="sim-badge-catalogo">(+R$ 30)</em>
                   </span>
                 </label>
 
                 <label class="check check--full" id="sim-wrap-agendamento">
                   <input type="checkbox" name="extras" value="agendamento" id="sim-extra-agendamento">
-                  <span>
-                    <i data-lucide="calendar-clock"></i>
-                    <span>Formulário / Agendamento no WhatsApp</span>
+                  <span class="check__body">
+                    <i data-lucide="calendar-clock" class="check__icon"></i>
+                    <span class="check__label">Formulário / Agendamento no WhatsApp</span>
                     <em id="sim-badge-agendamento">(+R$ 25)</em>
                   </span>
                 </label>
